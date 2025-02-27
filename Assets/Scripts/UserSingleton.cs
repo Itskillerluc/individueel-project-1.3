@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 
-public class ApiTokenSingleton : MonoBehaviour
+public class UserSingleton : MonoBehaviour
 {
-    public static ApiTokenSingleton Instance { get; private set; }
+    public static UserSingleton Instance { get; private set; }
     
     public string Token { get; set; }
+    public string Name { get; set; }
 
     private void Awake()
 	{

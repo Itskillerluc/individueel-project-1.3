@@ -1,8 +1,10 @@
-using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Models;
+using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ApiClientRoomCreation : MonoBehaviour
 {
@@ -14,7 +16,7 @@ public class ApiClientRoomCreation : MonoBehaviour
 
     public async void CreateRoom()
     {
-        if (ApiTokenSingleton.Instance?.Token == null)
+        if (UserSingleton.Instance?.Token == null)
         {
             Debug.LogError("No token found");
             return;
@@ -23,7 +25,7 @@ public class ApiClientRoomCreation : MonoBehaviour
 
         var roomsList = await GetRoomsList();
 
-        if (roomsList.rooms.Count >= 5)
+        if (roomsList.Count(room => room.users.Single(user => user.user.Equals(UserSingleton.Instance.Name)).isOwner) >= 5)
         {
             Debug.Log("user already has 5 rooms");
             return;
@@ -39,23 +41,22 @@ public class ApiClientRoomCreation : MonoBehaviour
         var room = new PostRoomsRequestDto
         {
             name = roomName,
-            widht = roomWidth,
+            width = roomWidth,
             height = roomHeight,
             tileId = tiles.name
         };
         
-        var response = await ApiUtil.PerformApiCall("https://localhost:7244/api/Rooms", "Post", JsonUtility.ToJson(room), ApiTokenSingleton.Instance.Token);
+        var response = await ApiUtil.PerformApiCall("https://localhost:7244/api/Rooms", "Post", JsonConvert.SerializeObject(room), UserSingleton.Instance.Token);
         //var response = await ApiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/api/Rooms", "Post", JsonUtility.ToJson(room), ApiTokenSingleton.Instance.Token);
-        Debug.Log(response);
+
+        await SceneManager.LoadSceneAsync("Scenes/RoomChoice");
     }
     
-    private async Task<GetRoomsResponseDto> GetRoomsList()
+    private async Task<GetRoomsResponseDto[]> GetRoomsList()
     {
         //var response = await ApiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/api/Rooms", "Get", token: ApiTokenSingleton.Instance.Token);
-        var response = await ApiUtil.PerformApiCall("https://localhost:7244/api/Rooms", "Get", token: ApiTokenSingleton.Instance.Token);
-        //BUG:
-        var room = JsonUtility.FromJson<GetRoomsResponseDto>(response);
-        Debug.Log(response);
+        var response = await ApiUtil.PerformApiCall("https://localhost:7244/api/Rooms", "Get", token: UserSingleton.Instance.Token);
+        var room = JsonConvert.DeserializeObject<GetRoomsResponseDto[]>(response);
         return room;
-    }
+    } 
 }

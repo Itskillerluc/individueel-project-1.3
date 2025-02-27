@@ -3,7 +3,7 @@
     public class PostRoomsRequestDto
     {
         public string name;
-        public float widht;
+        public float width;
         public float height;
         public string tileId;
     }

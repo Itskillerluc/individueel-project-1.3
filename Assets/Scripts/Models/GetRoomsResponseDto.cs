@@ -5,6 +5,12 @@ namespace Models
 {
     public class GetRoomsResponseDto
     {
-        public List<Room> rooms;
+        public Guid roomId;
+        public string name;
+        public float width;
+        public float height;
+        public string tileId;
+        public List<UserEntry> users;
+        public List<Prop> props;
     }
 }

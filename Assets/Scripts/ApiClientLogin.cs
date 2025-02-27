@@ -1,5 +1,6 @@
 using System.Text.RegularExpressions;
 using Models;
+using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,13 +15,13 @@ public class ApiClientLogin : MonoBehaviour
     {
         statusMessage.text = "Loading...";
 
-        if (email.text == "" || password.text == "")
+        if (email.text.ToLower() == "" || password.text == "")
         {
             statusMessage.text = "Fill in both email and password.";
             return;
         }
 
-        if (!Regex.IsMatch(email.text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+        if (!Regex.IsMatch(email.text.ToLower(), @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
         {
             statusMessage.text = "Email must be a valid email address.";
             return;
@@ -34,13 +35,13 @@ public class ApiClientLogin : MonoBehaviour
             return;
         }
 
-        var dto = new PostRegisterRequestDto { email = email.text, password = password.text };
+        var dto = new PostRegisterRequestDto { email = email.text.ToLower(), password = password.text };
         //todo
         // var response = await ApiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/account/register",
         //     "Post", JsonUtility.ToJson(dto));
         
         var response = await ApiUtil.PerformApiCall("https://localhost:7244/account/register",
-            "Post", JsonUtility.ToJson(dto));
+            "Post", JsonConvert.SerializeObject(dto));
 
         if (response == "HTTP/1.1 400 Bad Request")
         {
@@ -64,7 +65,7 @@ public class ApiClientLogin : MonoBehaviour
         //     JsonUtility.ToJson(dto));
         
         var response = await ApiUtil.PerformApiCall("https://localhost:7244/account/login", "Post",
-            JsonUtility.ToJson(dto));
+            JsonConvert.SerializeObject(dto));
 
         if (response == "HTTP/1.1 401 Unauthorized")
         {
@@ -81,10 +82,11 @@ public class ApiClientLogin : MonoBehaviour
         }
 
 
-        var postLoginResponseDto = JsonUtility.FromJson<PostLoginResponseDto>(response);
+        var postLoginResponseDto = JsonConvert.DeserializeObject<PostLoginResponseDto>(response);
 
 
-        ApiTokenSingleton.Instance.Token = postLoginResponseDto.accessToken;
+        UserSingleton.Instance.Token = postLoginResponseDto.accessToken;
+        UserSingleton.Instance.Name = email.text.ToLower();
 
         await SceneManager.LoadSceneAsync("Scenes/RoomChoice");
     }
