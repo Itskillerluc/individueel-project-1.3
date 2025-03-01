@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class Room : MonoBehaviour
@@ -7,25 +8,26 @@ public class Room : MonoBehaviour
 
     public GameObject wall;
     public GameObject corner;
-    public GameObject tile;
+    
+    public float width;
+    public float height;
+    
 
-    public float width = 0;
-    public float height = 0;
-
-    //Todo: remove this when done with testing
-    public void Test()
+    private void Start()
     {
-        GenerateNewRoom(10, 10, tile, wall, corner);
+        GenerateNewRoom();
     }
-
-    public void GenerateNewRoom(float width, float height, GameObject floor, GameObject wall, GameObject corner)
+    
+    private void GenerateNewRoom()
     {
-        this.width = width;
-        this.height = height;
+        var room = RoomSingleton.Instance.Room;
+        
+        width = room.width;
+        height = room.height;
 
-        var floorObject = Instantiate(floor, new Vector3(0, 0, 105), Quaternion.identity);
+        var floorObject = Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Floors/" + room.tileId + ".prefab"), new Vector3(0, 0, 105), Quaternion.identity);
         floorObject.GetComponent<Prop>().enabled = false;
-        var spriteRenderer = floor.GetComponent<SpriteRenderer>();
+        var spriteRenderer = floorObject.GetComponent<SpriteRenderer>();
         spriteRenderer.size = new Vector2(width, height);
 
         GenerateLeftWall(width, height);

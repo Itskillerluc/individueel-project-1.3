@@ -36,6 +36,19 @@ public class ApiClientRoomCreation : MonoBehaviour
         var roomName = roomNameInputField.text;
         var roomWidth = int.Parse(roomWidthInputField.text);
         var roomHeight = int.Parse(roomHeightInputField.text);
+
+        if (roomWidth < 5 || roomHeight < 5)
+        {
+            statusMessage.text = "The room width and height should be larger than 5.";
+            return;
+        }
+        
+        if (roomsList.Any(room => room.name.Equals(roomName)))
+        {
+            statusMessage.text = "A room with this name already exists.";
+            return;
+        }
+        
         var tiles = tileSelection.tiles[tileSelection.selectedTileIndex];
 
         var room = new PostRoomsRequestDto
