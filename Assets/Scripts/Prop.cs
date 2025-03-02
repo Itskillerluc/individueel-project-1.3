@@ -113,13 +113,13 @@ public class Prop : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IP
 
     private void BobAnimation()
     {
-        if (transform == null) return;
         var sequence = DOTween.Sequence();
         _animation?.Kill();
-        _animation = this.transform.DOScale(0.9f, 0.1f);
+        var scale = transform.localScale;
+        _animation = this.transform.DOScale(0.9f * scale, 0.1f);
         _animation.SetEase(Ease.Linear);
         sequence.Append(_animation);
-        _animation = this.transform.DOScale(1f, 0.1f);
+        _animation = this.transform.DOScale(1f * scale, 0.1f);
         _animation.SetEase(Ease.Linear);
         sequence.Append(_animation);
     }

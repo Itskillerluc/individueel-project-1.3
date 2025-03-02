@@ -11,6 +11,8 @@ public class ApiClientLogin : MonoBehaviour
     public TMP_InputField email;
     public TMP_InputField password;
 
+    //todo error when there is no connection
+    
     public async void Register()
     {
         statusMessage.text = "Loading...";

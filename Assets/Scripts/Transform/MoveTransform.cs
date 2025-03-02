@@ -30,8 +30,8 @@ namespace Transform
 
             var rotation = EffectedObject.rotation.eulerAngles.z;
             
-            var height = Mathf.Abs(Mathf.Cos(Mathf.Deg2Rad * rotation) * _objectSize.y) + Mathf.Abs(Mathf.Sin(Mathf.Deg2Rad * rotation) * _objectSize.x);
-            var width = Mathf.Abs(Mathf.Sin(Mathf.Deg2Rad * rotation) * _objectSize.y) + Mathf.Abs(Mathf.Cos(Mathf.Deg2Rad * rotation) * _objectSize.x);
+            var height = Mathf.Abs(Mathf.Cos(Mathf.Deg2Rad * rotation) * _objectSize.y * EffectedObject.localScale.y) + Mathf.Abs(Mathf.Sin(Mathf.Deg2Rad * rotation) * _objectSize.x * EffectedObject.localScale.x);
+            var width = Mathf.Abs(Mathf.Sin(Mathf.Deg2Rad * rotation) * _objectSize.y * EffectedObject.localScale.y) + Mathf.Abs(Mathf.Cos(Mathf.Deg2Rad * rotation) * _objectSize.x * EffectedObject.localScale.x);
             
             if (Axis == Axis.Vertical)
             {
