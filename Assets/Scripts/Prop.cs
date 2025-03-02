@@ -1,7 +1,10 @@
 using DG.Tweening;
+using JetBrains.Annotations;
 using Transform;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
 public class Prop : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -15,6 +18,7 @@ public class Prop : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IP
     private bool _selected;
     private Vector3 _offset;
     private static Camera _mainCamera;
+    private DeletePropButton _deleteButton;
 
     private Tween _animation;
 
@@ -28,12 +32,18 @@ public class Prop : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IP
     private void Start()
     {
         _room = FindAnyObjectByType<Room>();
+        _deleteButton = FindAnyObjectByType<DeletePropButton>();
     }
 
     public void SetSelected(bool selected)
     {
         if (selected)
         {
+            if (_deleteButton != null)
+            {
+                _deleteButton.button.interactable = true;
+                _deleteButton.prop = this;
+            }
             _selected = true;
             var outline = GetComponent<SpriteOutline>();
             if (TransformHandlesInstance == null)
@@ -47,6 +57,11 @@ public class Prop : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IP
         }
         else
         {
+            if (_deleteButton != null)
+            {
+                _deleteButton.button.interactable = false;
+                _deleteButton.prop = null;
+            }
             _selected = false;
             var outline = GetComponent<SpriteOutline>();
             if (TransformHandlesInstance != null) Destroy(TransformHandlesInstance);
@@ -105,6 +120,7 @@ public class Prop : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IP
             trueMousePosition.y < -(_room.height / 2) ||
             trueMousePosition.y > _room.height / 2)
         {
+            FindAnyObjectByType<GameManager>().props.Remove(gameObject);
             Destroy(gameObject);
             return true;
         }
@@ -134,6 +150,7 @@ public class Prop : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IP
                 prop.SetSelected(false);
             }
             SetSelected(true);
+            if (DestroyIfOutside()) return;
             BobAnimation();
         }
     }

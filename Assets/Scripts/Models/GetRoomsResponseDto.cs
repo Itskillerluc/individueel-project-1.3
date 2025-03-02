@@ -11,6 +11,6 @@ namespace Models
         public float height;
         public string tileId;
         public List<UserEntry> users;
-        public List<Prop> props;
+        public List<GetPropsResponse> props;
     }
 }

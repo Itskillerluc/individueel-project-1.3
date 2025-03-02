@@ -1,3 +1,7 @@
+using System;
+using System.Linq;
+using TMPro;
+using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,6 +12,7 @@ public class Room : MonoBehaviour
 
     public GameObject wall;
     public GameObject corner;
+    public TextMeshProUGUI roomName;
     
     public float width;
     public float height;
@@ -16,6 +21,7 @@ public class Room : MonoBehaviour
     private void Start()
     {
         GenerateNewRoom();
+        roomName.text = RoomSingleton.Instance.Room.name;
     }
     
     private void GenerateNewRoom()
@@ -36,6 +42,16 @@ public class Room : MonoBehaviour
         GenerateBottomWall(width, height);
 
         GenerateCorners(width, height);
+        
+        foreach (var prop in room.props)
+        {
+            if (prop.propId.Equals(Guid.Empty)) continue;
+            var guid = AssetDatabase.FindAssets(prop.prefabId.Replace("(Clone)", ""), new string[] {"Assets/Prefabs"}).FirstOrDefault();
+            if (guid is null) continue;
+            var propObject = Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(guid)), new Vector3(prop.posX, prop.posY, 100), quaternion.Euler(0, 0, prop.rotation));
+            propObject.transform.localScale = new Vector3(prop.scaleX, prop.scaleY, 1);
+            propObject.GetComponent<SpriteRenderer>().sortingOrder = prop.sortingLayer;
+        }
     }
 
     private void GenerateLeftWall(float roomWidth, float roomHeight)

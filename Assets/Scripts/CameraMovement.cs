@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+    private const float ScrollWidth = 200;
+    
     public Camera _camera;
     public float panSensitivity = 0.5f;
 
@@ -10,6 +13,12 @@ public class CameraMovement : MonoBehaviour
     private void Awake()
     {
         _camera = Camera.main;
+    }
+
+    private void Start()
+    {
+        var room = RoomSingleton.Instance.Room;
+        _camera.orthographicSize = Mathf.Max(room.height, room.width / 1.2f);
     }
 
     private void Update()
@@ -68,6 +77,7 @@ public class CameraMovement : MonoBehaviour
 
     private void ZoomCameraMouse()
     {
+        if (Input.mousePosition.x < ScrollWidth) return;
         var beforeMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
         var scrollDelta = Input.mouseScrollDelta.y;
         if (scrollDelta != 0)

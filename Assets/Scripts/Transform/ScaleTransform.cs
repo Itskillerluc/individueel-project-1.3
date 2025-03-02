@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 
 namespace Transform
 {
+    //todo make this less buggy
     public class ScaleTransform : MonoBehaviour, IPointerDownHandler
     {
         public UnityEngine.Transform EffectedObject;
@@ -12,11 +13,7 @@ namespace Transform
         private bool _dragging;
         private Vector3 _original;
         private Camera _mainCamera;
-
-        private void Start()
-        {
-            //_effectedObject = transform.parent.parent;
-        }
+        
         private void Update()
         {
             if (Input.GetMouseButtonUp(0) && _dragging) _dragging = false;
