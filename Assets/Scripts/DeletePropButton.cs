@@ -12,5 +12,7 @@ public class DeletePropButton : MonoBehaviour
     {
         FindAnyObjectByType<GameManager>().props.Remove(gameObject);
         Destroy(prop?.gameObject);
+        button.interactable = false;
+        prop = null;
     }
 }

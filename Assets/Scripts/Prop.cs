@@ -29,6 +29,11 @@ public class Prop : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IP
         _dragging = true;
     }
 
+    public void SetHovering()
+    {
+        _hover = true;
+    }
+
     private void Start()
     {
         _room = FindAnyObjectByType<Room>();
@@ -162,6 +167,9 @@ public class Prop : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IP
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        _hover = false;
+        if (eventData.button != PointerEventData.InputButton.Left)
+        {
+            _hover = false;
+        }
     }
 }

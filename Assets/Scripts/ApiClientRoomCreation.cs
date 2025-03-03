@@ -33,6 +33,24 @@ public class ApiClientRoomCreation : MonoBehaviour
         
         Debug.Log("Creating room");
         
+        if (roomNameInputField.text == "")
+        {
+            statusMessage.text = "Please enter a room name.";
+            return;
+        }
+        
+        if (roomWidthInputField.text == "")
+        {
+            statusMessage.text = "Please enter a room width.";
+            return;
+        }
+        
+        if (roomHeightInputField.text == "")
+        {
+            statusMessage.text = "Please enter a room height.";
+            return;
+        }
+        
         var roomName = roomNameInputField.text;
         var roomWidth = int.Parse(roomWidthInputField.text);
         var roomHeight = int.Parse(roomHeightInputField.text);
@@ -42,6 +60,14 @@ public class ApiClientRoomCreation : MonoBehaviour
             statusMessage.text = "The room width and height should be larger than 5.";
             return;
         }
+
+        if (roomWidth > 200 || roomHeight > 200)
+        {
+            statusMessage.text = "The room width and height should be smaller than 200.";
+            return;
+        }
+        
+        
         
         if (roomsList.Any(room => room.name.Equals(roomName)))
         {

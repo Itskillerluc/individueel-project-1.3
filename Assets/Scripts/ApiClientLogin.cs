@@ -49,6 +49,12 @@ public class ApiClientLogin : MonoBehaviour
         {
             statusMessage.text = "User already exists";
         }
+
+        if (response == "Cannot connect to destination host")
+        {
+            statusMessage.text = "Cannot connect to server";
+            return;
+        }
     }
 
     public async void Login()
@@ -83,6 +89,11 @@ public class ApiClientLogin : MonoBehaviour
             return;
         }
 
+        if (response == "Cannot connect to destination host")
+        {
+            statusMessage.text = "Cannot connect to server";
+            return;
+        }
 
         var postLoginResponseDto = JsonConvert.DeserializeObject<PostLoginResponseDto>(response);
 

@@ -12,6 +12,8 @@ public class ApiClientEnvironmentBuilder : MonoBehaviour
     {
         var props = gameManager.props;
 
+        await ApiUtil.PerformApiCall($"https://localhost:7244/api/Props?roomId={RoomSingleton.Instance.Room.roomId}", "DELETE", token: UserSingleton.Instance.Token);
+        
         foreach (var prop in props)
         {
             var postPropsRequestDto = new PostPropsRequestDto

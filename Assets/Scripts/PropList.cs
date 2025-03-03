@@ -14,5 +14,6 @@ public class PropList : MonoBehaviour
         var prop = instance.GetComponent<Prop>();
         gameManager.AddProp(prop, isBackground);
         prop.SetDragging();
+        prop.SetHovering();
     }
 }
