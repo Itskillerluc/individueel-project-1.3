@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Models;
 using UnityEngine;
@@ -22,6 +23,7 @@ public class RoomList : MonoBehaviour
     public GameObject nextButton;
     
     private GetRoomsResponseDto[] _entries;
+    private readonly List<GameObject> _loaded = new();
     private int maxPages;
     private int currentPage;
     
@@ -51,28 +53,27 @@ public class RoomList : MonoBehaviour
 
     private void LoadCurrentPage()
     {
+        foreach (var obj in _loaded)
+        {
+            Destroy(obj);
+        }
         var pageEntries = _entries[(currentPage * 5)..Mathf.Min(currentPage * 5 + 5, _entries.Length)];
 
-        if (pageEntries.Length > 5)
+        previousButton.GetComponent<Button>().interactable = currentPage > 0;
+        nextButton.GetComponent<Button>().interactable = currentPage < maxPages - 1;
+        
+        if (_entries.Length > 5)
         {
             nextButton.SetActive(true);
             previousButton.SetActive(true);
 
-            if (currentPage == 0)
-            {
-                previousButton.GetComponent<Button>().interactable = false;
-            } else if (currentPage == maxPages)
-            {
-                nextButton.GetComponent<Button>().interactable = false;
-            }
+            
         }
         else
         {
             nextButton.SetActive(false);
             previousButton.SetActive(false);
         }
-
-        
 
         for (var index = 0; index < pageEntries.Length; index++)
         {
@@ -85,6 +86,7 @@ public class RoomList : MonoBehaviour
             var rectangleTransform = roomEntry.GetComponent<RectTransform>();
             rectangleTransform.anchoredPosition = new Vector3(EntryX,  EntryStart - index * (EntrySpacing));
             rectangleTransform.sizeDelta = new Vector2(EntryWidth, EntryHeight);
+            _loaded.Add(roomEntry.gameObject);
         }
     }
 }

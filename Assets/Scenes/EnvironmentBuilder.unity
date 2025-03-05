@@ -2719,7 +2719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df5f6ad36956dd47b07aa2e58338df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statusText: {fileID: 1100042145}
+  statusText: {fileID: 1100042147}
   gameManager: {fileID: 822461529}
 --- !u!4 &229236530
 Transform:
@@ -11880,6 +11880,7 @@ GameObject:
   - component: {fileID: 1100042144}
   - component: {fileID: 1100042146}
   - component: {fileID: 1100042145}
+  - component: {fileID: 1100042147}
   m_Layer: 5
   m_Name: Status
   m_TagString: Untagged
@@ -12005,6 +12006,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100042143}
   m_CullTransparentMesh: 1
+--- !u!114 &1100042147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100042143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a91d728caea4d4a8cc5a1943ee91dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1100042145}
 --- !u!1 &1122462453
 GameObject:
   m_ObjectHideFlags: 0
