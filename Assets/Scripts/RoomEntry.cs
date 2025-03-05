@@ -9,7 +9,7 @@ public class RoomEntry : MonoBehaviour
     private const int confirmationPositionY = 350;
     private const int confirmationWidth = 820;
     private const int confirmationHeight = 450;
-    
+
     public TextMeshProUGUI text;
     public GetRoomsResponseDto Room;
     public GameObject deleteRoomConfirmation;
@@ -21,13 +21,15 @@ public class RoomEntry : MonoBehaviour
         await SceneManager.LoadSceneAsync("EnvironmentBuilder");
     }
 
-    public void DeleteRoom()
+    public void DeleteRoom(bool canEdit)
     {
         var confirmation = Instantiate(deleteRoomConfirmation, transform.parent);
         var rectTransform = confirmation.GetComponent<RectTransform>();
         rectTransform.anchoredPosition = new Vector2(confirmationPositionX, confirmationPositionY);
         rectTransform.sizeDelta = new Vector2(confirmationWidth, confirmationHeight);
-        confirmation.GetComponent<DeleteConfirmation>().Room = Room;
+        var deleteConfirmation = confirmation.GetComponent<DeleteConfirmation>();
+        deleteConfirmation.Room = Room;
+        deleteConfirmation.canEdit = canEdit;
     }
 
     public async void ShareRoom()

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class UserSingleton : MonoBehaviour
+public class UserSingleton : MonoBehaviour, IUserSingleton
 {
     public static UserSingleton Instance { get; private set; }
     
@@ -19,4 +19,10 @@ public class UserSingleton : MonoBehaviour
 		Instance = this;
 		DontDestroyOnLoad(this);
 	}
+}
+
+public interface IUserSingleton
+{
+	public string Token { get; set; }
+	public string Name { get; set; }
 }

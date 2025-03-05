@@ -11,18 +11,12 @@ namespace Transform
         private Quaternion _originalRotation;
         private Camera _mainCamera;
 
-        private void Start()
-        {
-            //_effectedObject = transform.parent.parent;
-        }
-
         private void Update()
         {
             if (Input.GetMouseButtonUp(0) && _dragging) _dragging = false;
             if (!_dragging) return;
             var mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
             EffectedObject.rotation = Quaternion.Euler(0, 0, _originalRotation.eulerAngles.z + Vector2.SignedAngle(_original - transform.parent.position, mousePosition - transform.parent.position));
-            //transform.parent.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         private void Awake()

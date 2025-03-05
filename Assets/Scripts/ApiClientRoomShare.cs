@@ -7,6 +7,13 @@ public class ApiClientRoomShare : MonoBehaviour
 {
     public TMP_InputField emailInput;
     
+    private ApiUtil _apiUtil;
+    
+    private void Awake()
+    {
+        _apiUtil = new ApiUtil();
+    }
+    
     public async void ShareRoom()
     {
         //var response = await ApiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/api/Rooms", "Get", token: ApiTokenSingleton.Instance.Token);
@@ -16,7 +23,7 @@ public class ApiClientRoomShare : MonoBehaviour
             username = emailInput.text.ToLower(),
             isOwner = false
         };
-        await ApiUtil.PerformApiCall("https://localhost:7244/api/UserRooms", "Post", JsonConvert.SerializeObject(request), token: UserSingleton.Instance.Token);
+        await _apiUtil.PerformApiCall("https://localhost:7244/api/UserRooms", "Post", JsonConvert.SerializeObject(request), token: UserSingleton.Instance.Token);
     }
 
 }

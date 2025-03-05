@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Models;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class RoomList : MonoBehaviour
 {
@@ -51,22 +52,32 @@ public class RoomList : MonoBehaviour
     private void LoadCurrentPage()
     {
         var pageEntries = _entries[(currentPage * 5)..Mathf.Min(currentPage * 5 + 5, _entries.Length)];
-        
-        if (pageEntries.Length < 5)
+
+        if (pageEntries.Length > 5)
+        {
+            nextButton.SetActive(true);
+            previousButton.SetActive(true);
+
+            if (currentPage == 0)
+            {
+                previousButton.GetComponent<Button>().interactable = false;
+            } else if (currentPage == maxPages)
+            {
+                nextButton.GetComponent<Button>().interactable = false;
+            }
+        }
+        else
         {
             nextButton.SetActive(false);
             previousButton.SetActive(false);
         }
-        else
-        {
-            nextButton.SetActive(true);
-            previousButton.SetActive(true);
-        }
+
+        
 
         for (var index = 0; index < pageEntries.Length; index++)
         {
             var entry = pageEntries[index];
-            var isOwner = entry.users.Find(user => user.user.Equals(UserSingleton.Instance.Name)).isOwner;
+            var isOwner = entry.isOwner;
             var roomEntry = Instantiate(isOwner ? editRoomPrefab : viewRoomPrefab,
                 new Vector3(EntryX, EntryStart + index * (EntrySpacing + EntryHeight)), Quaternion.identity, roomList);
             roomEntry.text.text = entry.name;

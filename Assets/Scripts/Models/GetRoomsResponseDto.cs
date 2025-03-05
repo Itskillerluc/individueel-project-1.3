@@ -7,10 +7,10 @@ namespace Models
     {
         public Guid roomId;
         public string name;
-        public float width;
-        public float height;
+        public int width;
+        public int height;
         public string tileId;
-        public List<UserEntry> users;
+        public bool isOwner;
         public List<GetPropsResponse> props;
     }
 }

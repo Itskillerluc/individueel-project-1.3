@@ -8877,6 +8877,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436f6ec860c855545ba4065fb9f1f1fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  editUI:
+  - {fileID: 618888574}
+  - {fileID: 1035141607}
+  - {fileID: 1286034523}
+  - {fileID: 132034011}
   wall: {fileID: 2714237004287445367, guid: 9c46c6a3b343a484596e6823fd1a352b, type: 3}
   corner: {fileID: 7821304623288775041, guid: 68f9bf35171b4a846bfcc34b0f2400c0, type: 3}
   roomName: {fileID: 117110294}

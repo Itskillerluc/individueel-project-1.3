@@ -31,19 +31,19 @@ public class CameraMovement : MonoBehaviour
 
     private void PanCameraButtons()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             _camera.transform.position += Vector3.up * panSensitivity;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             _camera.transform.position += Vector3.down * panSensitivity;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             _camera.transform.position += Vector3.left * panSensitivity;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             _camera.transform.position += Vector3.right * panSensitivity;
         }

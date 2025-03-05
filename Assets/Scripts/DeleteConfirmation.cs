@@ -5,10 +5,19 @@ using UnityEngine.SceneManagement;
 public class DeleteConfirmation : MonoBehaviour
 {
     public GetRoomsResponseDto Room;
+    public bool canEdit;
         
     public async void DeleteRoom()
     {
-        await ApiClientRoomChoiceSingleton.Instance.DeleteRoom(Room.roomId);
+        if (canEdit)
+        {
+            await ApiClientRoomChoiceSingleton.Instance.DeleteRoom(Room.roomId);
+        }
+        else
+        {
+            await ApiClientRoomChoiceSingleton.Instance.DeleteUserRoom(UserSingleton.Instance.Name, Room.roomId);
+        }
+
         await SceneManager.LoadSceneAsync("Scenes/RoomChoice");
     }
 

@@ -1,19 +1,41 @@
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Models;
 using Newtonsoft.Json;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ApiClientLogin : MonoBehaviour
+public class ApiClientLoginBehaviour : MonoBehaviour
 {
-    public TextMeshProUGUI statusMessage;
-    public TMP_InputField email;
-    public TMP_InputField password;
-
-    //todo error when there is no connection
+    public TextMeshProUGUIWrapper statusMessage;
+    public TMPTextWrapper email;
+    public TMPTextWrapper password;
     
+    private ApiClientLogin _apiClientLogin;
+    private ApiUtil _apiUtil;
+
+    private void Awake()
+    {
+        _apiClientLogin = new ApiClientLogin();
+        _apiUtil = new ApiUtil();
+    }
+
     public async void Register()
+    {
+        await _apiClientLogin.Register(statusMessage, email, password, _apiUtil);
+    }
+    
+    public async void Login()
+    {
+        await _apiClientLogin.Login(statusMessage, email, password, _apiUtil, UserSingleton.Instance);
+
+        await SceneManager.LoadSceneAsync("Scenes/RoomChoice");
+    }
+}
+
+public class ApiClientLogin
+{
+    public async Task Register(IText statusMessage, IText email, IText password, IApiUtil apiUtil)
     {
         statusMessage.text = "Loading...";
 
@@ -42,7 +64,7 @@ public class ApiClientLogin : MonoBehaviour
         // var response = await ApiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/account/register",
         //     "Post", JsonUtility.ToJson(dto));
         
-        var response = await ApiUtil.PerformApiCall("https://localhost:7244/account/register",
+        var response = await apiUtil.PerformApiCall("https://localhost:7244/account/register",
             "Post", JsonConvert.SerializeObject(dto));
 
         if (response == "HTTP/1.1 400 Bad Request")
@@ -55,9 +77,11 @@ public class ApiClientLogin : MonoBehaviour
             statusMessage.text = "Cannot connect to server";
             return;
         }
+        
+        statusMessage.text = "Registered successfully!";
     }
 
-    public async void Login()
+    public async Task Login(IText statusMessage, IText email, IText password, IApiUtil apiUtil, IUserSingleton userSingleton)
     {
         statusMessage.text = "Loading...";
 
@@ -72,7 +96,7 @@ public class ApiClientLogin : MonoBehaviour
         // var response = await ApiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/account/login", "Post",
         //     JsonUtility.ToJson(dto));
         
-        var response = await ApiUtil.PerformApiCall("https://localhost:7244/account/login", "Post",
+        var response = await apiUtil.PerformApiCall("https://localhost:7244/account/login", "Post",
             JsonConvert.SerializeObject(dto));
 
         if (response == "HTTP/1.1 401 Unauthorized")
@@ -98,9 +122,7 @@ public class ApiClientLogin : MonoBehaviour
         var postLoginResponseDto = JsonConvert.DeserializeObject<PostLoginResponseDto>(response);
 
 
-        UserSingleton.Instance.Token = postLoginResponseDto.accessToken;
-        UserSingleton.Instance.Name = email.text.ToLower();
-
-        await SceneManager.LoadSceneAsync("Scenes/RoomChoice");
+        userSingleton.Token = postLoginResponseDto.accessToken;
+        userSingleton.Name = email.text.ToLower();
     }
 }

@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class ApiUtil
+public class ApiUtil : IApiUtil
 {
-    public static async Task<string> PerformApiCall(string url, string method, string jsonData = null, string token = null)
+    public async Task<string> PerformApiCall(string url, string method, string jsonData = null, string token = null)
     {
         using UnityWebRequest request = new UnityWebRequest(url, method);
         if (!string.IsNullOrEmpty(jsonData))
@@ -31,4 +31,9 @@ public class ApiUtil
         Debug.LogError("Fout bij API-aanroep: " + request.error);
         return request.error;
     }
+}
+
+public interface IApiUtil
+{
+    public Task<string> PerformApiCall(string url, string method, string jsonData = null, string token = null);
 }

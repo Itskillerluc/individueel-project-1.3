@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using Unity.Mathematics;
@@ -10,6 +11,7 @@ public class Room : MonoBehaviour
     private const float WallWidth = 5f;
     private const float HalfWallHeight = .2f;
 
+    public List<GameObject> editUI;
     public GameObject wall;
     public GameObject corner;
     public TextMeshProUGUI roomName;
@@ -22,6 +24,10 @@ public class Room : MonoBehaviour
     {
         GenerateNewRoom();
         roomName.text = RoomSingleton.Instance.Room.name;
+        foreach (var obj in editUI)
+        {
+            obj.SetActive(RoomSingleton.Instance.CanEdit);
+        }
     }
     
     private void GenerateNewRoom()
