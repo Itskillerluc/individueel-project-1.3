@@ -43,5 +43,5 @@ jobs:
           -H "Accept: application/vnd.github+json" \
           -H "Authorization: Bearer ${{secrets.PAT}}" \
           -H "X-GitHub-Api-Version: 2022-11-28" \
-          https://api.github.com/repos/Itskillerluc/individueel-project-1.3-api/dispatches \
-          -d '{"event_type":"trigger-workflow"}'
+          https://api.github.com/repos/Itskillerluc/individueel-project-1.3-api/actions/workflows/145549007/dispatches \
+          -d '{"ref":"master"}'
