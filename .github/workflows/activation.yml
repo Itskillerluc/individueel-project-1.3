@@ -7,12 +7,11 @@ jobs:
     name: Request manual activation file 🔑
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - uses: game-ci/unity-request-activation-file@v2
-        id: getManualLicenseFile
-
-      - uses: actions/upload-artifact@v4
+      - uses: game-ci/unity-test-runner@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          name: Manual Activation File
-          path: ${{ steps.getManualLicenseFile.outputs.filePath }}
+          projectPath: ${{ steps.getManualLicenseFile.outputs.filePath }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
