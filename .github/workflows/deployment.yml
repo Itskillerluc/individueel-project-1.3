@@ -18,6 +18,7 @@ jobs:
         with:
           unityVersion: "6000.0.40f1"
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+        env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
   deploy-api:
