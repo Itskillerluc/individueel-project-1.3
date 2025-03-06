@@ -61,9 +61,6 @@ public class ApiClientLogin
         }
 
         var dto = new PostRegisterRequestDto { email = email.text.ToLower(), password = password.text };
-        //todo
-        // var response = await ApiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/account/register",
-        //     "Post", JsonUtility.ToJson(dto));
         
         var response = await apiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/account/register",
             "Post", JsonConvert.SerializeObject(dto));
@@ -94,9 +91,6 @@ public class ApiClientLogin
         }
 
         var dto = new PostLoginRequestDto { email = email.text.ToLower(), password = password.text };
-        //todo
-        // var response = await ApiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/account/login", "Post",
-        //     JsonUtility.ToJson(dto));
         
         var response = await apiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/account/login", "Post",
             JsonConvert.SerializeObject(dto));

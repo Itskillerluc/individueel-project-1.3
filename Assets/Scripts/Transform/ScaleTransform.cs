@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 namespace Transform
 {
-    //todo make this less buggy
+    //todo change sensitivity
     public class ScaleTransform : MonoBehaviour, IPointerDownHandler
     {
         public UnityEngine.Transform EffectedObject;

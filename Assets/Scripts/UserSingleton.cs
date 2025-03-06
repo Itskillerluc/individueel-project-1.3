@@ -19,7 +19,7 @@ public class UserSingleton : MonoBehaviour, IUserSingleton
 	    Invoke(nameof(Refresh), ExpiresIn);
     }
 
-    public async Task Refresh()
+    private async Task Refresh()
     {
 	    var refreshToken = await _apiUtil.PerformApiCall($"https://localhost:7244/account/refresh", "POST", $"{{\"refreshToken\":\"{RefreshToken}\"}}");
 	    var token = JsonConvert.DeserializeObject<PostLoginResponseDto>(refreshToken);
@@ -52,6 +52,4 @@ public interface IUserSingleton
 	public int ExpiresIn { get; set; }
 	public string Name { get; set; }
 	public void Updated();
-	//todo remove
-	public Task Refresh();
 }
