@@ -1,5 +1,8 @@
 name: Test and Deploy
 
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
 on:
   push:
     branches:
@@ -17,9 +20,7 @@ jobs:
       - uses: game-ci/unity-test-runner@v4
         with:
           unityVersion: "6000.0.40f1"
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}          
 
   deploy-api:
     runs-on: ubuntu-latest
