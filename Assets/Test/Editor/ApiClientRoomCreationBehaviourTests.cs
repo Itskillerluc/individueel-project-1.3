@@ -21,7 +21,7 @@ namespace Test.Editor
             IText roomWidthInputField = Substitute.For<IText>();
             roomWidthInputField.text.Returns("20");
             IUserSingleton userSingleton = Substitute.For<IUserSingleton>();
-            userSingleton.Token.Returns("TestToken");
+            userSingleton.AccessToken.Returns("TestToken");
             IApiUtil apiUtil = Substitute.For<IApiUtil>();
             apiUtil.PerformApiCall("https://localhost:7244/api/Rooms", "Post",
                 "{\"name\":\"name\",\"width\":20,\"height\":20,\"tileId\":\"Parquet1\"}", "TestToken").Returns(Task.FromResult(""));

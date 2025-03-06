@@ -27,7 +27,7 @@ namespace Test.Editor
             // Assert
             
             Assert.AreEqual("unit@test.nl", userSingleton.Name);
-            Assert.AreEqual("TestToken", userSingleton.Token);
+            Assert.AreEqual("TestToken", userSingleton.AccessToken);
         }
         
         [Test]

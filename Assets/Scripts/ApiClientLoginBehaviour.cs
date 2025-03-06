@@ -85,13 +85,13 @@ public class ApiClientLogin
     {
         statusMessage.text = "Loading...";
 
-        if (email.text == "" || password.text == "")
+        if (email.text.ToLower() == "" || password.text == "")
         {
             statusMessage.text = "Fill in both email and password.";
             return;
         }
 
-        var dto = new PostLoginRequestDto { email = email.text, password = password.text };
+        var dto = new PostLoginRequestDto { email = email.text.ToLower(), password = password.text };
         //todo
         // var response = await ApiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/account/login", "Post",
         //     JsonUtility.ToJson(dto));
@@ -122,7 +122,10 @@ public class ApiClientLogin
         var postLoginResponseDto = JsonConvert.DeserializeObject<PostLoginResponseDto>(response);
 
 
-        userSingleton.Token = postLoginResponseDto.accessToken;
+        userSingleton.AccessToken = postLoginResponseDto.accessToken;
         userSingleton.Name = email.text.ToLower();
+        userSingleton.ExpiresIn = postLoginResponseDto.expiresIn;
+        userSingleton.RefreshToken = postLoginResponseDto.refreshToken;
+        userSingleton.Updated();
     }
 }

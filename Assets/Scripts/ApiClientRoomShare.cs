@@ -23,7 +23,7 @@ public class ApiClientRoomShare : MonoBehaviour
             username = emailInput.text.ToLower(),
             isOwner = false
         };
-        await _apiUtil.PerformApiCall("https://localhost:7244/api/UserRooms", "Post", JsonConvert.SerializeObject(request), token: UserSingleton.Instance.Token);
+        await _apiUtil.PerformApiCall("https://localhost:7244/api/UserRooms", "Post", JsonConvert.SerializeObject(request), token: UserSingleton.Instance.AccessToken);
     }
 
 }

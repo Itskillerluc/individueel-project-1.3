@@ -31,7 +31,7 @@ public class ApiClientEnvironmentBuilder
     {
         var props = gameManager.Props;
 
-        await apiUtil.PerformApiCall($"https://localhost:7244/api/Props?roomId={roomId}", "DELETE", token: userSingleton.Token);
+        await apiUtil.PerformApiCall($"https://localhost:7244/api/Props?roomId={roomId}", "DELETE", token: userSingleton.AccessToken);
         
         foreach (var prop in props)
         {
@@ -49,7 +49,7 @@ public class ApiClientEnvironmentBuilder
             
             // todo
             // "https://avansict2226538.azurewebsites.net/api/Rooms"
-            await apiUtil.PerformApiCall($"https://localhost:7244/api/Props", "Post", JsonConvert.SerializeObject(postPropsRequestDto), token: userSingleton.Token);
+            await apiUtil.PerformApiCall($"https://localhost:7244/api/Props", "Post", JsonConvert.SerializeObject(postPropsRequestDto), token: userSingleton.AccessToken);
         }
         statusText.text = "Saved!";
     }

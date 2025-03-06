@@ -17,7 +17,7 @@ namespace Test.Editor
             IGameManager gameManager = Substitute.For<IGameManager>();
             gameManager.Props.Returns(new List<GameObject>());
             IUserSingleton userSingleton = Substitute.For<IUserSingleton>();
-            userSingleton.Token.Returns("TestToken");
+            userSingleton.AccessToken.Returns("TestToken");
             IApiUtil apiUtil = Substitute.For<IApiUtil>();
             apiUtil.PerformApiCall($"https://localhost:7244/api/Props?roomId=00000000-0000-0000-0000-000000000000", "DELETE", token: "TestToken").Returns(Task.FromResult(""));
             IText statusText = Substitute.For<IText>();
