@@ -13,6 +13,13 @@ on:
   workflow_dispatch:
 
 jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - run: tree .
+      - uses: actions/checkout@v4
+      - run: tree .
+
   test:
     permissions: write-all
     runs-on: ubuntu-latest
