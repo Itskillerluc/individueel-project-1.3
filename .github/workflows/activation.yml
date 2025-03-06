@@ -3,12 +3,6 @@ name: Get Unity license activation file 🔐
 on: workflow_dispatch
 
 jobs:
-  debug:
-    name: debug
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: cat ProjectSettings/ProjectVersion.txt
   requestManualActivationFile:
     name: Request manual activation file 🔑
     runs-on: ubuntu-latest
@@ -21,4 +15,4 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           projectPath: .
-          githubToken: ${{ secrets.TOKEN }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
