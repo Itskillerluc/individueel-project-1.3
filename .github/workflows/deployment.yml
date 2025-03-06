@@ -1,9 +1,5 @@
 name: Test and Deploy
 
-env: # Change these settings when you need to
-  ARTIFACT_NAME: individueel-project-1.3
-  DOTNET_CORE_VERSION: 8.0.x
-  PUBLISH_DIRECTORY: "./out/publish"
 on:
   push:
     branches:
