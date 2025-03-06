@@ -7,7 +7,6 @@ public class MenuObject : MonoBehaviour
 {
     public bool isBackground;
     private Tween _animation;
-    private Camera _camera;
     
     private void Start()
     {
@@ -33,11 +32,6 @@ public class MenuObject : MonoBehaviour
             eventID = EventTriggerType.PointerExit,
             callback = exitTrigger
         });
-    }
-
-    private void Awake()
-    {
-        _camera = Camera.main;
     }
 
     public void OnClick()

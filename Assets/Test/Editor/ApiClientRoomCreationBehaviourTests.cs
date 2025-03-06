@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using NSubstitute;
-using NSubstitute.ReturnsExtensions;
 using NUnit.Framework;
 
 namespace Test.Editor

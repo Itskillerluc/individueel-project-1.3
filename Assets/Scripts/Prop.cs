@@ -1,10 +1,7 @@
 using DG.Tweening;
-using JetBrains.Annotations;
 using Transform;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
-using Button = UnityEngine.UI.Button;
 
 public class Prop : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -98,11 +95,19 @@ public class Prop : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IP
 
     private void MouseUp()
     {
-        _dragging = false;
-        if (DestroyIfOutside()) return;
-        transform.position = new Vector3(transform.position.x, transform.position.y, 100);
-        if (_selected) return;
-        BobAnimation();
+        if (_dragging)
+        {
+            _dragging = false;
+            if (DestroyIfOutside())
+            {
+                return;
+
+            }
+            transform.position = new Vector3(transform.position.x, transform.position.y, 100);
+            if (_selected) return;
+            BobAnimation();
+        }
+        _dragging = false; 
     }
 
     private void OnDestroy()
@@ -155,7 +160,7 @@ public class Prop : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IP
                 prop.SetSelected(false);
             }
             SetSelected(true);
-            if (DestroyIfOutside()) return;
+            if (_hover && DestroyIfOutside()) return;
             BobAnimation();
         }
     }

@@ -1,9 +1,7 @@
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Models;
 using Newtonsoft.Json;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,20 +24,22 @@ public class ApiClientRoomCreationBehaviour : MonoBehaviour
 
     public async void CreateRoom()
     {
-        await _apiClientRoomCreation.CreateRoom(_apiUtil, statusMessage, roomNameInputField, roomHeightInputField, roomWidthInputField, tileSelection.Tiles[tileSelection.SelectedTileIndex].name, UserSingleton.Instance);
-        
-        await SceneManager.LoadSceneAsync("Scenes/RoomChoice");
+        if (await _apiClientRoomCreation.CreateRoom(_apiUtil, statusMessage, roomNameInputField, roomHeightInputField,
+                roomWidthInputField, tileSelection.Tiles[tileSelection.SelectedTileIndex].name, UserSingleton.Instance))
+        {
+            await SceneManager.LoadSceneAsync("Scenes/RoomChoice");
+        }
     }
 }
 
 public class ApiClientRoomCreation
 {
-    public async Task CreateRoom(IApiUtil apiUtil, IText statusMessage, IText roomNameInputField, IText roomHeightInputField, IText roomWidthInputField, string tileName, IUserSingleton userSingleton)
+    public async Task<bool> CreateRoom(IApiUtil apiUtil, IText statusMessage, IText roomNameInputField, IText roomHeightInputField, IText roomWidthInputField, string tileName, IUserSingleton userSingleton)
     {
         if (userSingleton.AccessToken == null)
         {
             Debug.LogError("No token found");
-            return;
+            return false;
         }
         Debug.Log("Getting rooms");
 
@@ -49,7 +49,7 @@ public class ApiClientRoomCreation
         {
             Debug.Log("user already has 5 rooms");
             statusMessage.text = "You have reached the maximum number of 5 rooms.";
-            return;
+            return false;
         }
         
         Debug.Log("Creating room");
@@ -57,25 +57,25 @@ public class ApiClientRoomCreation
         if (roomNameInputField.text == "")
         {
             statusMessage.text = "Please enter a room name.";
-            return;
+            return false;
         }
 
         if (roomNameInputField.text.Length > 25)
         {
             statusMessage.text = "The room name should be shorter than 25 characters.";
-            return;
+            return false;
         }
         
         if (roomWidthInputField.text == "")
         {
             statusMessage.text = "Please enter a room width.";
-            return;
+            return false;
         }
         
         if (roomHeightInputField.text == "")
         {
             statusMessage.text = "Please enter a room height.";
-            return;
+            return false;
         }
         
         var roomName = roomNameInputField.text;
@@ -85,25 +85,25 @@ public class ApiClientRoomCreation
         if (roomWidth < 20)
         {
             statusMessage.text = "The room width should be larger than 20.";
-            return;
+            return false;
         }
 
         if (roomHeight < 10)
         {
             statusMessage.text = "The room height should be larger than 10.";
-            return;
+            return false;
         }
 
         if (roomWidth > 200)
         {
             statusMessage.text = "The room width should be smaller than 200.";
-            return;
+            return false;
         }
         
         if (roomHeight > 100)
         {
             statusMessage.text = "The room height should be smaller than 100.";
-            return;
+            return false;
         }
         
         
@@ -111,7 +111,7 @@ public class ApiClientRoomCreation
         if (roomsList.Any(room => room.name.Equals(roomName)))
         {
             statusMessage.text = "A room with this name already exists.";
-            return;
+            return false;
         }
         
         var room = new PostRoomsRequestDto
@@ -126,6 +126,8 @@ public class ApiClientRoomCreation
         //var response = await ApiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/api/Rooms", "Post", JsonUtility.ToJson(room), ApiTokenSingleton.Instance.Token);
 
         statusMessage.text = "Room created!";
+
+        return true;
     }
     
     private async Task<GetRoomsResponseDto[]> GetRoomsList(IApiUtil apiUtil, IUserSingleton userSingleton)

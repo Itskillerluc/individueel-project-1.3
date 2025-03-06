@@ -2,7 +2,6 @@ using System;
 using System.Threading.Tasks;
 using Models;
 using Newtonsoft.Json;
-using TMPro;
 using UnityEngine;
 
 public class ApiClientEnvironmentBuilderBehaviour : MonoBehaviour

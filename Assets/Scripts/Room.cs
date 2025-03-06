@@ -52,7 +52,7 @@ public class Room : MonoBehaviour
         foreach (var prop in room.props)
         {
             if (prop.propId.Equals(Guid.Empty)) continue;
-            var guid = AssetDatabase.FindAssets(prop.prefabId.Replace("(Clone)", ""), new string[] {"Assets/Prefabs"}).FirstOrDefault();
+            var guid = AssetDatabase.FindAssets(prop.prefabId.Replace("(Clone)", ""), new[] {"Assets/Prefabs"}).FirstOrDefault();
             if (guid is null) continue;
             var propObject = Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(guid)), new Vector3(prop.posX, prop.posY, 100), quaternion.Euler(0, 0, prop.rotation));
             propObject.transform.localScale = new Vector3(prop.scaleX, prop.scaleY, 1);

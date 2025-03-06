@@ -6,20 +6,20 @@ namespace Transform
     {
         private UnityEngine.Transform _transform;
 
-        public void SetEffectedObject(UnityEngine.Transform transform)
+        public void SetEffectedObject(UnityEngine.Transform objectTransform)
         {
-            _transform = transform;
+            _transform = objectTransform;
             foreach (var item in GetComponentsInChildren<MoveTransform>())
             {
-                item.EffectedObject = transform;
+                item.EffectedObject = objectTransform;
             }
             foreach (var item in GetComponentsInChildren<ScaleTransform>())
             {
-                item.EffectedObject = transform;
+                item.EffectedObject = objectTransform;
             }
             foreach (var item in GetComponentsInChildren<RotationTransform>())
             {
-                item.EffectedObject = transform;
+                item.EffectedObject = objectTransform;
             }
         }
 

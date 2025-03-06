@@ -4,9 +4,9 @@ using UnityEngine.UI;
 
 public class SmartScrollRect : ScrollRect, IPointerEnterHandler, IPointerExitHandler
 {
-    private static string _mouseScrollWheelAxis = "Mouse ScrollWheel";
+    private static readonly string _mouseScrollWheelAxis = "Mouse ScrollWheel";
     private bool _swallowMouseWheelScrolls = true;
-    private bool _isMouseOver = false;
+    private bool _isMouseOver;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
