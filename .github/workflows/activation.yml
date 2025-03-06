@@ -8,16 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: pwd
-      - run: ls .
-      - run: ls -la
-      - run: dir
-      - run: tree
-      - run: ls ..
+      - run: cat ProjectSettings/ProjectVersion.txt
   requestManualActivationFile:
     name: Request manual activation file 🔑
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: game-ci/unity-test-runner@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
