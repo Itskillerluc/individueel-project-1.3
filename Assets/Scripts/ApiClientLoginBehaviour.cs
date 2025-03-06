@@ -27,9 +27,10 @@ public class ApiClientLoginBehaviour : MonoBehaviour
     
     public async void Login()
     {
-        await _apiClientLogin.Login(statusMessage, email, password, _apiUtil, UserSingleton.Instance);
-
-        await SceneManager.LoadSceneAsync("Scenes/RoomChoice");
+        if (await _apiClientLogin.Login(statusMessage, email, password, _apiUtil, UserSingleton.Instance))
+        {
+            await SceneManager.LoadSceneAsync("Scenes/RoomChoice");
+        }
     }
 }
 
@@ -70,6 +71,7 @@ public class ApiClientLogin
         if (response == "HTTP/1.1 400 Bad Request")
         {
             statusMessage.text = "User already exists";
+            return;
         }
 
         if (response == "Cannot connect to destination host")
@@ -81,14 +83,14 @@ public class ApiClientLogin
         statusMessage.text = "Registered successfully!";
     }
 
-    public async Task Login(IText statusMessage, IText email, IText password, IApiUtil apiUtil, IUserSingleton userSingleton)
+    public async Task<bool> Login(IText statusMessage, IText email, IText password, IApiUtil apiUtil, IUserSingleton userSingleton)
     {
         statusMessage.text = "Loading...";
 
         if (email.text.ToLower() == "" || password.text == "")
         {
             statusMessage.text = "Fill in both email and password.";
-            return;
+            return false;
         }
 
         var dto = new PostLoginRequestDto { email = email.text.ToLower(), password = password.text };
@@ -103,20 +105,20 @@ public class ApiClientLogin
         {
             statusMessage.text = "Wrong email or password";
             Debug.Log("Login failed.");
-            return;
+            return false;
         }
 
         if (response == "HTTP/1.1 500 Internal Server Error")
         {
             statusMessage.text = "Something went wrong :( Please try again.";
             Debug.Log("Server Error");
-            return;
+            return false;
         }
 
         if (response == "Cannot connect to destination host")
         {
             statusMessage.text = "Cannot connect to server";
-            return;
+            return false;
         }
 
         var postLoginResponseDto = JsonConvert.DeserializeObject<PostLoginResponseDto>(response);
@@ -127,5 +129,6 @@ public class ApiClientLogin
         userSingleton.ExpiresIn = postLoginResponseDto.expiresIn;
         userSingleton.RefreshToken = postLoginResponseDto.refreshToken;
         userSingleton.Updated();
+        return true;
     }
 }
