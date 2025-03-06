@@ -12,6 +12,7 @@ jobs:
       - run: ls -la
       - run: dir
       - run: tree
+      - run: ls ..
   requestManualActivationFile:
     name: Request manual activation file 🔑
     runs-on: ubuntu-latest
