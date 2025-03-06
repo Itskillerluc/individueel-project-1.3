@@ -17,7 +17,7 @@ namespace Test.Editor
             IText password = Substitute.For<IText>();
             password.text.Returns("ABCabc123!@#");
             IApiUtil apiUtil = Substitute.For<IApiUtil>();
-            apiUtil.PerformApiCall("https://localhost:7244/account/login", "Post",
+            apiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/account/login", "Post",
                 "{\"email\":\"unit@test.nl\",\"password\":\"ABCabc123!@#\"}").Returns(Task.FromResult("{\"tokenType\":\"Bearer\",\"accessToken\":\"TestToken\",\"expiresIn\":3600,\"refreshToken\":\"TestToken\"}"));
             IUserSingleton userSingleton = Substitute.For<IUserSingleton>();
             
@@ -41,7 +41,7 @@ namespace Test.Editor
             IText password = Substitute.For<IText>();
             password.text.Returns("ABCabc123!@#");
             IApiUtil apiUtil = Substitute.For<IApiUtil>();
-            apiUtil.PerformApiCall("https://localhost:7244/account/register", "Post",
+            apiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/account/register", "Post",
                 "{\"email\":\"unit@test.nl\",\"password\":\"ABCabc123!@#\"}").Returns(Task.FromResult("{\"tokenType\":\"Bearer\",\"accessToken\":\"TestToken\",\"expiresIn\":3600,\"refreshToken\":\"TestToken\"}"));
             // Act
             await apiClientLogin.Register(statusMessage, email, password, apiUtil);

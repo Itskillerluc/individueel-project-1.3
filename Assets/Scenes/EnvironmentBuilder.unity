@@ -8877,11 +8877,503 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436f6ec860c855545ba4065fb9f1f1fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  values:
+  - {fileID: 9212453804923443604, guid: 7211f0aeaf3db1547b62c2a4a67a35f7, type: 3}
+  - {fileID: -5631856025689195342, guid: f7bb5a9b00fb8f647b703768b8700866, type: 3}
+  - {fileID: -1382313561239344203, guid: 821bace6ad8691c4a8287aeb2c9d65e2, type: 3}
+  - {fileID: -7994417474086560101, guid: 4ba399497486b0f4fbd906190ab592a0, type: 3}
+  - {fileID: -4667267647243801603, guid: ca5e13368f119724aa037b08275e2c47, type: 3}
+  - {fileID: 8237439108318205929, guid: 09c3879e04fd3ac449ccdd904974c891, type: 3}
+  - {fileID: -3926846089364420278, guid: d5f8b9aa01fc5e744a97b29822d42e88, type: 3}
+  - {fileID: -2237178819056961355, guid: bae02fa75f68c7849a97789fa942e871, type: 3}
+  - {fileID: 301315854780290027, guid: ce6db8d663252a14385df565b18fc9d9, type: 3}
+  - {fileID: -7304488405507774317, guid: d0a52632a53272a4aa57f9e5ed15498a, type: 3}
+  - {fileID: -4950941769414325627, guid: db92ed7838e744a468f1705bb06509bf, type: 3}
+  - {fileID: 1103027046062356224, guid: ab18f8ef44a07b541a1304b4a3fc74cb, type: 3}
+  - {fileID: -7325808644335546726, guid: 3f2f7fddacde26448aa347b100e9167b, type: 3}
+  - {fileID: -4998225674636824739, guid: 776e356ac37cabe47a3aafc5a4074e5d, type: 3}
+  - {fileID: -6920391160801065357, guid: 28aa71e35deb0254e9c68ea1b71884a5, type: 3}
+  - {fileID: 6214219329668683236, guid: 0e2ba0c62a250694390ff14fa5e148d2, type: 3}
+  - {fileID: -7390065273743404294, guid: d5e550538075fa0469bc4dfdac61e613, type: 3}
+  - {fileID: -1881180502685024162, guid: 360b9c847fc328e45a23818eae3c66bb, type: 3}
+  - {fileID: 3286660451297413921, guid: 507876e95f08a9d418b8aaad85896069, type: 3}
+  - {fileID: -8018132228985137430, guid: 9f5078a9a46369f4b89b34d69b9efc7a, type: 3}
+  - {fileID: 7009749090697270454, guid: a00015cdfac02044db4f2c346024fda4, type: 3}
+  - {fileID: 1757075106239254022, guid: 991abb39ac4ad3c4c8ef04eee4fb5b24, type: 3}
+  - {fileID: 4671057326828357257, guid: 79ec113fe0c7f4341bf5d41eaddaaaf5, type: 3}
+  - {fileID: 5349113943383450610, guid: fb4bc25400ac3ad41866273938a31695, type: 3}
+  - {fileID: -2638061840790553595, guid: 498d10b00cd35964a86558b2b41b773b, type: 3}
+  - {fileID: -1809113031355991320, guid: e9dde4ff438fd2545a12257fc6d0f7b5, type: 3}
+  - {fileID: -6090909363841449692, guid: 31c5aa0a35e9df0499a7755b6c04438a, type: 3}
+  - {fileID: -3035576770430588475, guid: aab4bbc5e5e8fc8458b1e1fc4625cd1a, type: 3}
+  - {fileID: 6665235270956180343, guid: 65781007070f4394daf478056d659bb1, type: 3}
+  - {fileID: 3390658415915037097, guid: 49415b4226dc83746b0a9a1ff353a258, type: 3}
+  - {fileID: 195045474683188043, guid: 4298c90a876c01445b4f7e87eab0c50f, type: 3}
+  - {fileID: -4608186990832686907, guid: 84fd47e7b0eb6aa4f99515c297f66fd1, type: 3}
+  - {fileID: -1119815638504786426, guid: c195fea4f5f3526438199dc1f6a5df44, type: 3}
+  - {fileID: -1667281648615431831, guid: 23d300cc4fcff614b92c8ef4364b6fa4, type: 3}
+  - {fileID: -3236468328481978407, guid: 429fccfbc40e10945bf565e02ce66caf, type: 3}
+  - {fileID: 1257419362056620084, guid: 8a96df32d887f804e94aa585fbc53545, type: 3}
+  - {fileID: -6127308343114113367, guid: 1d3e22f7943d7ac40a54756e2d1bd2c2, type: 3}
+  - {fileID: 4132860400929754251, guid: ace988ca5820f334d870efe394641446, type: 3}
+  - {fileID: 909479339782105521, guid: d6f116f105daacc49b2e3f92aeda5bc1, type: 3}
+  - {fileID: 7031867773589925341, guid: c1951d5ed4b0e9b47a670dfb5794c887, type: 3}
+  - {fileID: 3448796318834173647, guid: 36a0a8a886be146499afa28603a4b8aa, type: 3}
+  - {fileID: -7108823148888292322, guid: c4ff06f7b3e525044b318162f582487d, type: 3}
+  - {fileID: -1742684399655005227, guid: fe8c47c0cd0c20442beae8598fdf92ad, type: 3}
+  - {fileID: 6567920734778811642, guid: ea23d3f8e340d1f4f8f703be01366d7e, type: 3}
+  - {fileID: 6814139848397505917, guid: 7ee30e67f921fbe4db96e0864cce8dae, type: 3}
+  - {fileID: -2229250501646186468, guid: 977bc7305bc71944a8f61041ac986a10, type: 3}
+  - {fileID: 6570941623675343162, guid: acd0448cc9ed57f4bb87bffec753bc9b, type: 3}
+  - {fileID: -2837557770291539697, guid: 52d4944cd3ad5d144a7514e25bff89d5, type: 3}
+  - {fileID: 6125018251195827295, guid: 224f33193e5bf8741b26f605023e5fbe, type: 3}
+  - {fileID: -3777207331496081662, guid: ec35c720eab1fe34890bfa1f3b76ddde, type: 3}
+  - {fileID: -1663709280553517842, guid: 6da1ff50c986609408fda9b6fb51f21d, type: 3}
+  - {fileID: -7130397827669994908, guid: 545bf889adb29c24080b943dc0b2014e, type: 3}
+  - {fileID: -1191006611054359832, guid: b640c230238941d49b00dfd6b0c52e86, type: 3}
+  - {fileID: 5709087424316127860, guid: e17e9086a3ba1b546b3e10e8c1a46154, type: 3}
+  - {fileID: -4948164620175625865, guid: 2971d0c5744bf534b8be80aa47dc2df4, type: 3}
+  - {fileID: -2469635005116724947, guid: a5fac1557bb128743ab598a1795e26b8, type: 3}
+  - {fileID: 4805327470912468806, guid: 72930f366bcb51245b7078f7841fa3ed, type: 3}
+  - {fileID: 847630697265535001, guid: d994e770681cf3f468fdee8a4a17b801, type: 3}
+  - {fileID: 2663989516608608140, guid: 2d46f85e6fe07234e8f3a4b2e431f114, type: 3}
+  - {fileID: 4291808865569878148, guid: 5918615eb2420184eb4a24755876a292, type: 3}
+  - {fileID: -4565449410592472590, guid: 3b3152844efdadd4d9668a6fc0fdac5d, type: 3}
+  - {fileID: -2535625253542908072, guid: b961cca01f41bf44e9a5ef6e070f638f, type: 3}
+  - {fileID: -362722569586644411, guid: f911acc9474915246b88d1df5692cf22, type: 3}
+  - {fileID: -2492716407047648200, guid: bd6ffddec6cacdd45a87f8f63ce4d885, type: 3}
+  - {fileID: -7216231278101239199, guid: ea3c28e7ed1e20840be7b94a16340518, type: 3}
+  - {fileID: 203397514223798405, guid: 80b6f83652e45864e9d05a2779e94d9a, type: 3}
+  - {fileID: -146083037998605814, guid: 838bdfb994cfd3c42bd17952c987b684, type: 3}
+  - {fileID: -2894249581981190696, guid: b55939ef9e90f35498e453ef3d614ba2, type: 3}
+  - {fileID: -7039475589439929975, guid: 635c02b4053995a4f983e75f57f007b3, type: 3}
+  - {fileID: 6973488920491061569, guid: fca3761aa8d14ea4bbb3f8e82db0e4f7, type: 3}
+  - {fileID: -7215911568548335459, guid: fa0de9223af460747851ee9338c83744, type: 3}
+  - {fileID: 4805832478377408439, guid: b4ccdb42722e9624e8047698deafaf9a, type: 3}
+  - {fileID: 4014495796017930173, guid: 16744ce9ce8a2be42884e41353d78266, type: 3}
+  - {fileID: -6934865756551998184, guid: 91d0ba16f90fa13418e12a90fbccd0f9, type: 3}
+  - {fileID: 1161063937472436930, guid: 0b6857702eef2544b9cd4167cec53936, type: 3}
+  - {fileID: -2394351427882344614, guid: a1d8d584045c4114dbdaf3cfc61b257b, type: 3}
+  - {fileID: -563751006078904917, guid: 71539561d2bc46b47b91dd3313f2ab9b, type: 3}
+  - {fileID: 2277895661225453104, guid: 6ba6e2e068a06fc498405c6735f128a7, type: 3}
+  - {fileID: -5377711129450098731, guid: c286530f4eed33146837fdc011fbf319, type: 3}
+  - {fileID: -5832647194669464964, guid: bedfb4e057ea0014bb85f770a09e2652, type: 3}
+  - {fileID: -2378674474907818335, guid: a8c0e7cd2f6739d41904b6a736c77bc2, type: 3}
+  - {fileID: -4678803853531106522, guid: 7ec54454c5f39204bb807730b0856cc7, type: 3}
+  - {fileID: 4882126962715785604, guid: e7f063f8fcd5edc48b06ef53fe750c8b, type: 3}
+  - {fileID: -1238829325081091938, guid: fbb54d4901a4dc54ebc452a05d1c5160, type: 3}
+  - {fileID: 7102787197854607466, guid: 3afdea9e24d43334aa59ab6bba6f2d2c, type: 3}
+  - {fileID: -292928907966857717, guid: 32d3bc33bf4404146bf8d646486c43f6, type: 3}
+  - {fileID: 1824474647694142947, guid: 323b6c1e40d397b4fa041646ae0cf62a, type: 3}
+  - {fileID: -8976749116845267167, guid: 787b101b77a40b349a16cf058d96394b, type: 3}
+  - {fileID: 4540657582458261597, guid: d5c2d511420dba14d812d5d987d338d2, type: 3}
+  - {fileID: -403698005720189045, guid: c229d43f263465e4fa94a4602bd8d182, type: 3}
+  - {fileID: 5352278052565053948, guid: 8e80732487afa824f80873e79aa25766, type: 3}
+  - {fileID: 7348628975640030654, guid: 90dd1181f5daddb4bab0f1ee7fc61478, type: 3}
+  - {fileID: 9122796386589726482, guid: 7252a40281820d8408ba4a0ce435309d, type: 3}
+  - {fileID: -546717630005171344, guid: 59b45013b8d67284b99cac240144e5ed, type: 3}
+  - {fileID: -6804728375683352795, guid: d417dd373ff1bd94eae17bfbb100666e, type: 3}
+  - {fileID: 2072790675268832995, guid: e33b0e75d290825448969aeea070c4e9, type: 3}
+  - {fileID: -2807765845723993950, guid: cd359f3f5744c0b42951367de7c56705, type: 3}
+  - {fileID: -6567364591715977404, guid: 910312eae47afec45bedb01596223cd6, type: 3}
+  - {fileID: 6775034264083566539, guid: ea43d0c9ca6911a40b38de76f7f7efbc, type: 3}
+  - {fileID: 1641584016736083083, guid: 7666928ca71269844bc8a07ed0584a7e, type: 3}
+  - {fileID: -1526769176957677597, guid: b30387c964aac034098210c5f96d2f8c, type: 3}
+  - {fileID: 8371968966101562513, guid: cb0eec4337904db4f988f11bc2f4a44b, type: 3}
+  - {fileID: -1359787203222323727, guid: b9b8458a78190b848963ba48b772d5a2, type: 3}
+  - {fileID: -7410714433673322618, guid: 7fbd00c64fe8a984ab38fe47ba578702, type: 3}
+  - {fileID: 8468780193006490110, guid: 475da973bf0931d4da84d327393c69d4, type: 3}
+  - {fileID: -3099284047417798238, guid: 54a18cc8c58b9c04590f66c6fd4675d2, type: 3}
+  - {fileID: -3414478338722463513, guid: d7ef0968297c5e54ebb971290df9c7f6, type: 3}
+  - {fileID: 568647585567647772, guid: 67aeeb6e5e5c15f448c948e578022fda, type: 3}
+  - {fileID: 3811925786760464946, guid: b481015223667a04f828229f9fd0c65d, type: 3}
+  - {fileID: -1938478357786307125, guid: 57c840ad43fc3594a822d3da7a2f880f, type: 3}
+  - {fileID: 157847965232244694, guid: ecbfabae8db41094ba039009e2a9f4cc, type: 3}
+  - {fileID: 6336186757332216147, guid: 4ff7320e9c834a946a2fa9618c249adb, type: 3}
+  - {fileID: 4856226630155052446, guid: 9a02ae010a9e3fa4f8ebab30a8d8ff4e, type: 3}
+  - {fileID: -2016526587460338264, guid: 372ef77f64763b547a81b649928a19e3, type: 3}
+  - {fileID: -5257902266843286437, guid: e1a7ae9d1e4ca3d429a12cdae596c8ee, type: 3}
+  - {fileID: 8902282657352485180, guid: b0359cc624b2cdf479de5408175c3e24, type: 3}
+  - {fileID: 6475217947209109871, guid: ed1fafa082747bd4fa41c087ad318d7a, type: 3}
+  - {fileID: 2850414190950742567, guid: 9ebd840f8d8164c418fd5716f11fb7d3, type: 3}
+  - {fileID: 8832907826042637265, guid: 72f6cf83d5a6cbf45b70e9998c865099, type: 3}
+  - {fileID: 8597396050286774941, guid: 67f1187e8b6579e4291391fa1d3455ea, type: 3}
+  - {fileID: 1983355462841861759, guid: e1b6e5d820108274fa1df31ed2294d38, type: 3}
+  - {fileID: 8048155963452084658, guid: 712ad3780a3e40d48b5d5bb636a58bcf, type: 3}
+  - {fileID: 5466779608351499001, guid: f23cf4db40d3bbe49bde09333bcdf068, type: 3}
+  - {fileID: -1675419358870088185, guid: 5310d59219a620f4c8fb2a26730e581b, type: 3}
+  - {fileID: -3710379985208328909, guid: b384cc5e0fa39bd4abf213a6ece1e35a, type: 3}
+  - {fileID: -5211669257213729005, guid: 10f5a6b72d425aa409e8e1475a7913af, type: 3}
+  - {fileID: 2261446759235716741, guid: 8b38bf0722bab5a498ad8ab6cdd8367c, type: 3}
+  - {fileID: 8867679200498352347, guid: d56281eb05f108c4495cef121d384c25, type: 3}
+  - {fileID: -3686839284004804742, guid: fde7110756c60264da76f1c689830ae6, type: 3}
+  - {fileID: 3402657165766930686, guid: f6202ee3cd9c3f644b31b484f149e822, type: 3}
+  - {fileID: 8786095145866111938, guid: eea853172b17a1047966bb8ea07f5ecc, type: 3}
+  - {fileID: -283808547822813, guid: 45e73f35a20b5d545874eee5d398f3ff, type: 3}
+  - {fileID: 6960623969785781134, guid: 6b19b655c51f18c42a1fa8f48f4bbeb2, type: 3}
+  - {fileID: -3128651207829688433, guid: 2cb591992488182479978320b9bb087c, type: 3}
+  - {fileID: 1018623309764413448, guid: a4ce421fe95423742b062a829ca99d42, type: 3}
+  - {fileID: -1824217500690330199, guid: 3fed94710d326414e9500d043c56c486, type: 3}
+  - {fileID: 1669419267672321810, guid: ed15329731849044e861b5a6ab4950de, type: 3}
+  - {fileID: 2129639545014535856, guid: 029809996b7d5d34a81384b51da0b0f6, type: 3}
+  - {fileID: 5851622988336877677, guid: 9ce0374ec40964f40beb3635af7b27fd, type: 3}
+  - {fileID: 5352568075541434327, guid: 0256147edd2b04d408edb608aaa4be26, type: 3}
+  - {fileID: 4970465782071004622, guid: 72a13f201e455c348bf63ea387760e1f, type: 3}
+  - {fileID: -7149865917619598409, guid: a8f379cf7b4fb8440a136c2616df0f4a, type: 3}
+  - {fileID: -8989970232135021666, guid: 23e89aa7568500344920853888c70cc2, type: 3}
+  - {fileID: 307046177213072197, guid: 5213b22c15926b743904ab6ddbe3a83d, type: 3}
+  - {fileID: -2147229703516437998, guid: 2d59aedc8df32df4ab802fed5708c3a1, type: 3}
+  - {fileID: -185044556516280647, guid: 86eeb79bd88c57d44936a3532d983a2a, type: 3}
+  - {fileID: -4340650983713689145, guid: a783fe563e16a3248844f416753b035b, type: 3}
+  - {fileID: 3683752434546601652, guid: 50b520fa058263b4fa49a31e0ab1044b, type: 3}
+  - {fileID: -7066686590591304441, guid: 6508623fa3a3a2c4898005e4414b7ead, type: 3}
+  - {fileID: -3052598655096264350, guid: 0cc8f47746c83ea45a025643befc8626, type: 3}
+  - {fileID: 5140052600413302479, guid: 360fc8651fc9e8846b7e6eb12d47358b, type: 3}
+  - {fileID: -8523151002129767102, guid: f07221fa0aaf3b344a6f67eb20f5400f, type: 3}
+  - {fileID: -4206841693097243412, guid: 6e1f4d19950ac6149b777713c5229213, type: 3}
+  - {fileID: 350730727911568525, guid: 6fdbb812ebb686942b56f75f6cc462ee, type: 3}
+  - {fileID: 6624328209990092123, guid: 9c46c6a3b343a484596e6823fd1a352b, type: 3}
+  - {fileID: -4433893410351319919, guid: 68f9bf35171b4a846bfcc34b0f2400c0, type: 3}
+  - {fileID: 4351309975049254982, guid: 303fd8eb69862df4f97f8e1970ec8b05, type: 3}
+  - {fileID: -225393527542782962, guid: e5708b21c1d349349ae7b6210442156e, type: 3}
+  - {fileID: -7744599524558522512, guid: e620df57ff43cfc4cb613e1b30b1d566, type: 3}
+  - {fileID: -8588642171218930574, guid: f53e07b5b4bd07946bbe2a5df7a194fe, type: 3}
+  - {fileID: -1413628472597129758, guid: 418b50f67bc58b4449a9a47229cbc40c, type: 3}
+  - {fileID: -1424358280203914088, guid: c54185e9ac549144fbcbb374e4cc0196, type: 3}
+  - {fileID: -7756716403384026835, guid: c3e475b8650d5a3458ff0f4fe8efb515, type: 3}
   editUI:
   - {fileID: 618888574}
   - {fileID: 1035141607}
   - {fileID: 1286034523}
   - {fileID: 132034011}
+  - {fileID: 132034011}
+  prefabs:
+  - name: Bath
+    prop: {fileID: 9212453804923443604, guid: 7211f0aeaf3db1547b62c2a4a67a35f7, type: 3}
+  - name: Sink
+    prop: {fileID: -5631856025689195342, guid: f7bb5a9b00fb8f647b703768b8700866, type: 3}
+  - name: Soap
+    prop: {fileID: -1382313561239344203, guid: 821bace6ad8691c4a8287aeb2c9d65e2, type: 3}
+  - name: Parquet1
+    prop: {fileID: -7994417474086560101, guid: 4ba399497486b0f4fbd906190ab592a0, type: 3}
+  - name: Parquet2
+    prop: {fileID: -4667267647243801603, guid: ca5e13368f119724aa037b08275e2c47, type: 3}
+  - name: Parquet3
+    prop: {fileID: 8237439108318205929, guid: 09c3879e04fd3ac449ccdd904974c891, type: 3}
+  - name: Tile
+    prop: {fileID: -3926846089364420278, guid: d5f8b9aa01fc5e744a97b29822d42e88, type: 3}
+  - name: Tile2
+    prop: {fileID: -2237178819056961355, guid: bae02fa75f68c7849a97789fa942e871, type: 3}
+  - name: WoodFloor1
+    prop: {fileID: 301315854780290027, guid: ce6db8d663252a14385df565b18fc9d9, type: 3}
+  - name: WoodFloor2
+    prop: {fileID: -7304488405507774317, guid: d0a52632a53272a4aa57f9e5ed15498a, type: 3}
+  - name: Axe
+    prop: {fileID: -4950941769414325627, guid: db92ed7838e744a468f1705bb06509bf, type: 3}
+  - name: Bag
+    prop: {fileID: 1103027046062356224, guid: ab18f8ef44a07b541a1304b4a3fc74cb, type: 3}
+  - name: Barrel1
+    prop: {fileID: -7325808644335546726, guid: 3f2f7fddacde26448aa347b100e9167b, type: 3}
+  - name: Barrel2
+    prop: {fileID: -4998225674636824739, guid: 776e356ac37cabe47a3aafc5a4074e5d, type: 3}
+  - name: Barrel3
+    prop: {fileID: -6920391160801065357, guid: 28aa71e35deb0254e9c68ea1b71884a5, type: 3}
+  - name: Bat
+    prop: {fileID: 6214219329668683236, guid: 0e2ba0c62a250694390ff14fa5e148d2, type: 3}
+  - name: Board1
+    prop: {fileID: -7390065273743404294, guid: d5e550538075fa0469bc4dfdac61e613, type: 3}
+  - name: Board2
+    prop: {fileID: -1881180502685024162, guid: 360b9c847fc328e45a23818eae3c66bb, type: 3}
+  - name: Board3
+    prop: {fileID: 3286660451297413921, guid: 507876e95f08a9d418b8aaad85896069, type: 3}
+  - name: Boot
+    prop: {fileID: -8018132228985137430, guid: 9f5078a9a46369f4b89b34d69b9efc7a, type: 3}
+  - name: Box1
+    prop: {fileID: 7009749090697270454, guid: a00015cdfac02044db4f2c346024fda4, type: 3}
+  - name: Box2
+    prop: {fileID: 1757075106239254022, guid: 991abb39ac4ad3c4c8ef04eee4fb5b24, type: 3}
+  - name: Box3
+    prop: {fileID: 4671057326828357257, guid: 79ec113fe0c7f4341bf5d41eaddaaaf5, type: 3}
+  - name: Brush
+    prop: {fileID: 5349113943383450610, guid: fb4bc25400ac3ad41866273938a31695, type: 3}
+  - name: Canister
+    prop: {fileID: -2638061840790553595, guid: 498d10b00cd35964a86558b2b41b773b, type: 3}
+  - name: CapOfBarrel
+    prop: {fileID: -1809113031355991320, guid: e9dde4ff438fd2545a12257fc6d0f7b5, type: 3}
+  - name: Crate
+    prop: {fileID: -6090909363841449692, guid: 31c5aa0a35e9df0499a7755b6c04438a, type: 3}
+  - name: Dynamite
+    prop: {fileID: -3035576770430588475, guid: aab4bbc5e5e8fc8458b1e1fc4625cd1a, type: 3}
+  - name: DynamiteFire
+    prop: {fileID: 6665235270956180343, guid: 65781007070f4394daf478056d659bb1, type: 3}
+  - name: ElectricSaw
+    prop: {fileID: 3390658415915037097, guid: 49415b4226dc83746b0a9a1ff353a258, type: 3}
+  - name: Explosion
+    prop: {fileID: 195045474683188043, guid: 4298c90a876c01445b4f7e87eab0c50f, type: 3}
+  - name: ExplosionTrace
+    prop: {fileID: -4608186990832686907, guid: 84fd47e7b0eb6aa4f99515c297f66fd1, type: 3}
+  - name: Hammer
+    prop: {fileID: -1119815638504786426, guid: c195fea4f5f3526438199dc1f6a5df44, type: 3}
+  - name: Haystack1
+    prop: {fileID: -1667281648615431831, guid: 23d300cc4fcff614b92c8ef4364b6fa4, type: 3}
+  - name: Haystack2
+    prop: {fileID: -3236468328481978407, guid: 429fccfbc40e10945bf565e02ce66caf, type: 3}
+  - name: KeroseneLamp
+    prop: {fileID: 1257419362056620084, guid: 8a96df32d887f804e94aa585fbc53545, type: 3}
+  - name: Ladder
+    prop: {fileID: -6127308343114113367, guid: 1d3e22f7943d7ac40a54756e2d1bd2c2, type: 3}
+  - name: Log1
+    prop: {fileID: 4132860400929754251, guid: ace988ca5820f334d870efe394641446, type: 3}
+  - name: Log2
+    prop: {fileID: 909479339782105521, guid: d6f116f105daacc49b2e3f92aeda5bc1, type: 3}
+  - name: Log3
+    prop: {fileID: 7031867773589925341, guid: c1951d5ed4b0e9b47a670dfb5794c887, type: 3}
+  - name: Log4
+    prop: {fileID: 3448796318834173647, guid: 36a0a8a886be146499afa28603a4b8aa, type: 3}
+  - name: Manure1
+    prop: {fileID: -7108823148888292322, guid: c4ff06f7b3e525044b318162f582487d, type: 3}
+  - name: Manure2
+    prop: {fileID: -1742684399655005227, guid: fe8c47c0cd0c20442beae8598fdf92ad, type: 3}
+  - name: Manure3
+    prop: {fileID: 6567920734778811642, guid: ea23d3f8e340d1f4f8f703be01366d7e, type: 3}
+  - name: Manure4
+    prop: {fileID: 6814139848397505917, guid: 7ee30e67f921fbe4db96e0864cce8dae, type: 3}
+  - name: Mop
+    prop: {fileID: -2229250501646186468, guid: 977bc7305bc71944a8f61041ac986a10, type: 3}
+  - name: MotorDetails
+    prop: {fileID: 6570941623675343162, guid: acd0448cc9ed57f4bb87bffec753bc9b, type: 3}
+  - name: Paint
+    prop: {fileID: -2837557770291539697, guid: 52d4944cd3ad5d144a7514e25bff89d5, type: 3}
+  - name: Pelvis
+    prop: {fileID: 6125018251195827295, guid: 224f33193e5bf8741b26f605023e5fbe, type: 3}
+  - name: Pelvis2
+    prop: {fileID: -3777207331496081662, guid: ec35c720eab1fe34890bfa1f3b76ddde, type: 3}
+  - name: PickupTruck
+    prop: {fileID: -1663709280553517842, guid: 6da1ff50c986609408fda9b6fb51f21d, type: 3}
+  - name: Saw
+    prop: {fileID: -7130397827669994908, guid: 545bf889adb29c24080b943dc0b2014e, type: 3}
+  - name: Sawdust
+    prop: {fileID: -1191006611054359832, guid: b640c230238941d49b00dfd6b0c52e86, type: 3}
+  - name: Sawmill
+    prop: {fileID: 5709087424316127860, guid: e17e9086a3ba1b546b3e10e8c1a46154, type: 3}
+  - name: Screwdriver
+    prop: {fileID: -4948164620175625865, guid: 2971d0c5744bf534b8be80aa47dc2df4, type: 3}
+  - name: ToolBox
+    prop: {fileID: -2469635005116724947, guid: a5fac1557bb128743ab598a1795e26b8, type: 3}
+  - name: Wheel
+    prop: {fileID: 4805327470912468806, guid: 72930f366bcb51245b7078f7841fa3ed, type: 3}
+  - name: Wrench
+    prop: {fileID: 847630697265535001, guid: d994e770681cf3f468fdee8a4a17b801, type: 3}
+  - name: Bake
+    prop: {fileID: 2663989516608608140, guid: 2d46f85e6fe07234e8f3a4b2e431f114, type: 3}
+  - name: BarFaucet
+    prop: {fileID: 4291808865569878148, guid: 5918615eb2420184eb4a24755876a292, type: 3}
+  - name: Basket
+    prop: {fileID: -4565449410592472590, guid: 3b3152844efdadd4d9668a6fc0fdac5d, type: 3}
+  - name: Beer
+    prop: {fileID: -2535625253542908072, guid: b961cca01f41bf44e9a5ef6e070f638f, type: 3}
+  - name: Birdakil
+    prop: {fileID: -362722569586644411, guid: f911acc9474915246b88d1df5692cf22, type: 3}
+  - name: Bottle1
+    prop: {fileID: -2492716407047648200, guid: bd6ffddec6cacdd45a87f8f63ce4d885, type: 3}
+  - name: Bottle2
+    prop: {fileID: -7216231278101239199, guid: ea3c28e7ed1e20840be7b94a16340518, type: 3}
+  - name: Bread1
+    prop: {fileID: 203397514223798405, guid: 80b6f83652e45864e9d05a2779e94d9a, type: 3}
+  - name: Bread2
+    prop: {fileID: -146083037998605814, guid: 838bdfb994cfd3c42bd17952c987b684, type: 3}
+  - name: BreadSlice
+    prop: {fileID: -2894249581981190696, guid: b55939ef9e90f35498e453ef3d614ba2, type: 3}
+  - name: ButterKnife
+    prop: {fileID: -7039475589439929975, guid: 635c02b4053995a4f983e75f57f007b3, type: 3}
+  - name: Cup
+    prop: {fileID: 6973488920491061569, guid: fca3761aa8d14ea4bbb3f8e82db0e4f7, type: 3}
+  - name: CuttingBoard
+    prop: {fileID: -7215911568548335459, guid: fa0de9223af460747851ee9338c83744, type: 3}
+  - name: Egg1
+    prop: {fileID: 4805832478377408439, guid: b4ccdb42722e9624e8047698deafaf9a, type: 3}
+  - name: Egg2
+    prop: {fileID: 4014495796017930173, guid: 16744ce9ce8a2be42884e41353d78266, type: 3}
+  - name: Fried potato
+    prop: {fileID: -6934865756551998184, guid: 91d0ba16f90fa13418e12a90fbccd0f9, type: 3}
+  - name: FriedEgg
+    prop: {fileID: 1161063937472436930, guid: 0b6857702eef2544b9cd4167cec53936, type: 3}
+  - name: FryingPan
+    prop: {fileID: -2394351427882344614, guid: a1d8d584045c4114dbdaf3cfc61b257b, type: 3}
+  - name: Glass
+    prop: {fileID: -563751006078904917, guid: 71539561d2bc46b47b91dd3313f2ab9b, type: 3}
+  - name: Glass2
+    prop: {fileID: 2277895661225453104, guid: 6ba6e2e068a06fc498405c6735f128a7, type: 3}
+  - name: Grapes
+    prop: {fileID: -5377711129450098731, guid: c286530f4eed33146837fdc011fbf319, type: 3}
+  - name: Grapes2
+    prop: {fileID: -5832647194669464964, guid: bedfb4e057ea0014bb85f770a09e2652, type: 3}
+  - name: Ketchup
+    prop: {fileID: -2378674474907818335, guid: a8c0e7cd2f6739d41904b6a736c77bc2, type: 3}
+  - name: Mousetrap
+    prop: {fileID: -4678803853531106522, guid: 7ec54454c5f39204bb807730b0856cc7, type: 3}
+  - name: Mustard
+    prop: {fileID: 4882126962715785604, guid: e7f063f8fcd5edc48b06ef53fe750c8b, type: 3}
+  - name: NutBlowl
+    prop: {fileID: -1238829325081091938, guid: fbb54d4901a4dc54ebc452a05d1c5160, type: 3}
+  - name: Oil
+    prop: {fileID: 7102787197854607466, guid: 3afdea9e24d43334aa59ab6bba6f2d2c, type: 3}
+  - name: Oilcan
+    prop: {fileID: -292928907966857717, guid: 32d3bc33bf4404146bf8d646486c43f6, type: 3}
+  - name: Omelette
+    prop: {fileID: 1824474647694142947, guid: 323b6c1e40d397b4fa041646ae0cf62a, type: 3}
+  - name: OvalPlate
+    prop: {fileID: -8976749116845267167, guid: 787b101b77a40b349a16cf058d96394b, type: 3}
+  - name: Plate
+    prop: {fileID: 4540657582458261597, guid: d5c2d511420dba14d812d5d987d338d2, type: 3}
+  - name: Plate1
+    prop: {fileID: -403698005720189045, guid: c229d43f263465e4fa94a4602bd8d182, type: 3}
+  - name: Plate2
+    prop: {fileID: 5352278052565053948, guid: 8e80732487afa824f80873e79aa25766, type: 3}
+  - name: Plug
+    prop: {fileID: 7348628975640030654, guid: 90dd1181f5daddb4bab0f1ee7fc61478, type: 3}
+  - name: Pot1
+    prop: {fileID: 9122796386589726482, guid: 7252a40281820d8408ba4a0ce435309d, type: 3}
+  - name: Pot2
+    prop: {fileID: -546717630005171344, guid: 59b45013b8d67284b99cac240144e5ed, type: 3}
+  - name: Rag
+    prop: {fileID: -6804728375683352795, guid: d417dd373ff1bd94eae17bfbb100666e, type: 3}
+  - name: RefrigeratorBase
+    prop: {fileID: 2072790675268832995, guid: e33b0e75d290825448969aeea070c4e9, type: 3}
+  - name: RefrigeratorDoor
+    prop: {fileID: -2807765845723993950, guid: cd359f3f5744c0b42951367de7c56705, type: 3}
+  - name: RoastPig
+    prop: {fileID: -6567364591715977404, guid: 910312eae47afec45bedb01596223cd6, type: 3}
+  - name: RoundTable
+    prop: {fileID: 6775034264083566539, guid: ea43d0c9ca6911a40b38de76f7f7efbc, type: 3}
+  - name: Salad
+    prop: {fileID: 1641584016736083083, guid: 7666928ca71269844bc8a07ed0584a7e, type: 3}
+  - name: SausageSlicing
+    prop: {fileID: -1526769176957677597, guid: b30387c964aac034098210c5f96d2f8c, type: 3}
+  - name: Shelf
+    prop: {fileID: 8371968966101562513, guid: cb0eec4337904db4f988f11bc2f4a44b, type: 3}
+  - name: Stool
+    prop: {fileID: -1359787203222323727, guid: b9b8458a78190b848963ba48b772d5a2, type: 3}
+  - name: Table1
+    prop: {fileID: -7410714433673322618, guid: 7fbd00c64fe8a984ab38fe47ba578702, type: 3}
+  - name: Table2
+    prop: {fileID: 8468780193006490110, guid: 475da973bf0931d4da84d327393c69d4, type: 3}
+  - name: Tablecloth1
+    prop: {fileID: -3099284047417798238, guid: 54a18cc8c58b9c04590f66c6fd4675d2, type: 3}
+  - name: Tablecloth2
+    prop: {fileID: -3414478338722463513, guid: d7ef0968297c5e54ebb971290df9c7f6, type: 3}
+  - name: Teapot
+    prop: {fileID: 568647585567647772, guid: 67aeeb6e5e5c15f448c948e578022fda, type: 3}
+  - name: Toaster
+    prop: {fileID: 3811925786760464946, guid: b481015223667a04f828229f9fd0c65d, type: 3}
+  - name: Vodka
+    prop: {fileID: -1938478357786307125, guid: 57c840ad43fc3594a822d3da7a2f880f, type: 3}
+  - name: Washing
+    prop: {fileID: 157847965232244694, guid: ecbfabae8db41094ba039009e2a9f4cc, type: 3}
+  - name: Wastebasket1
+    prop: {fileID: 6336186757332216147, guid: 4ff7320e9c834a946a2fa9618c249adb, type: 3}
+  - name: Wastebasket2
+    prop: {fileID: 4856226630155052446, guid: 9a02ae010a9e3fa4f8ebab30a8d8ff4e, type: 3}
+  - name: Wine1
+    prop: {fileID: -2016526587460338264, guid: 372ef77f64763b547a81b649928a19e3, type: 3}
+  - name: Wine2
+    prop: {fileID: -5257902266843286437, guid: e1a7ae9d1e4ca3d429a12cdae596c8ee, type: 3}
+  - name: Armchair
+    prop: {fileID: 8902282657352485180, guid: b0359cc624b2cdf479de5408175c3e24, type: 3}
+  - name: Banjo
+    prop: {fileID: 6475217947209109871, guid: ed1fafa082747bd4fa41c087ad318d7a, type: 3}
+  - name: BearSkin
+    prop: {fileID: 2850414190950742567, guid: 9ebd840f8d8164c418fd5716f11fb7d3, type: 3}
+  - name: Book
+    prop: {fileID: 8832907826042637265, guid: 72f6cf83d5a6cbf45b70e9998c865099, type: 3}
+  - name: Cactus
+    prop: {fileID: 8597396050286774941, guid: 67f1187e8b6579e4291391fa1d3455ea, type: 3}
+  - name: Candelabra1
+    prop: {fileID: 1983355462841861759, guid: e1b6e5d820108274fa1df31ed2294d38, type: 3}
+  - name: Candelabra2
+    prop: {fileID: 8048155963452084658, guid: 712ad3780a3e40d48b5d5bb636a58bcf, type: 3}
+  - name: CardGame
+    prop: {fileID: 5466779608351499001, guid: f23cf4db40d3bbe49bde09333bcdf068, type: 3}
+  - name: Carpet1
+    prop: {fileID: -1675419358870088185, guid: 5310d59219a620f4c8fb2a26730e581b, type: 3}
+  - name: Carpet2
+    prop: {fileID: -3710379985208328909, guid: b384cc5e0fa39bd4abf213a6ece1e35a, type: 3}
+  - name: Chair1
+    prop: {fileID: -5211669257213729005, guid: 10f5a6b72d425aa409e8e1475a7913af, type: 3}
+  - name: Chair2
+    prop: {fileID: 2261446759235716741, guid: 8b38bf0722bab5a498ad8ab6cdd8367c, type: 3}
+  - name: Clock
+    prop: {fileID: 8867679200498352347, guid: d56281eb05f108c4495cef121d384c25, type: 3}
+  - name: CoffeeTable1
+    prop: {fileID: -3686839284004804742, guid: fde7110756c60264da76f1c689830ae6, type: 3}
+  - name: CoffeeTable2
+    prop: {fileID: 3402657165766930686, guid: f6202ee3cd9c3f644b31b484f149e822, type: 3}
+  - name: Cornice1
+    prop: {fileID: 8786095145866111938, guid: eea853172b17a1047966bb8ea07f5ecc, type: 3}
+  - name: Cornice2
+    prop: {fileID: -283808547822813, guid: 45e73f35a20b5d545874eee5d398f3ff, type: 3}
+  - name: DeerHead
+    prop: {fileID: 6960623969785781134, guid: 6b19b655c51f18c42a1fa8f48f4bbeb2, type: 3}
+  - name: Dresser1
+    prop: {fileID: -3128651207829688433, guid: 2cb591992488182479978320b9bb087c, type: 3}
+  - name: Dresser2
+    prop: {fileID: 1018623309764413448, guid: a4ce421fe95423742b062a829ca99d42, type: 3}
+  - name: Dresser3
+    prop: {fileID: -1824217500690330199, guid: 3fed94710d326414e9500d043c56c486, type: 3}
+  - name: Dresser4
+    prop: {fileID: 1669419267672321810, guid: ed15329731849044e861b5a6ab4950de, type: 3}
+  - name: FloorLamp
+    prop: {fileID: 2129639545014535856, guid: 029809996b7d5d34a81384b51da0b0f6, type: 3}
+  - name: Houseplant1
+    prop: {fileID: 5851622988336877677, guid: 9ce0374ec40964f40beb3635af7b27fd, type: 3}
+  - name: Houseplant2
+    prop: {fileID: 5352568075541434327, guid: 0256147edd2b04d408edb608aaa4be26, type: 3}
+  - name: Newspaper
+    prop: {fileID: 4970465782071004622, guid: 72a13f201e455c348bf63ea387760e1f, type: 3}
+  - name: Pedestal
+    prop: {fileID: -7149865917619598409, guid: a8f379cf7b4fb8440a136c2616df0f4a, type: 3}
+  - name: Rug1
+    prop: {fileID: -8989970232135021666, guid: 23e89aa7568500344920853888c70cc2, type: 3}
+  - name: Rug2
+    prop: {fileID: 307046177213072197, guid: 5213b22c15926b743904ab6ddbe3a83d, type: 3}
+  - name: Sofa
+    prop: {fileID: -2147229703516437998, guid: 2d59aedc8df32df4ab802fed5708c3a1, type: 3}
+  - name: TV
+    prop: {fileID: -185044556516280647, guid: 86eeb79bd88c57d44936a3532d983a2a, type: 3}
+  - name: VaseWithFlowers
+    prop: {fileID: -4340650983713689145, guid: a783fe563e16a3248844f416753b035b, type: 3}
+  - name: Door1
+    prop: {fileID: 3683752434546601652, guid: 50b520fa058263b4fa49a31e0ab1044b, type: 3}
+  - name: Door2
+    prop: {fileID: -7066686590591304441, guid: 6508623fa3a3a2c4898005e4414b7ead, type: 3}
+  - name: Door3
+    prop: {fileID: -3052598655096264350, guid: 0cc8f47746c83ea45a025643befc8626, type: 3}
+  - name: Door4
+    prop: {fileID: 5140052600413302479, guid: 360fc8651fc9e8846b7e6eb12d47358b, type: 3}
+  - name: Doorstep
+    prop: {fileID: -8523151002129767102, guid: f07221fa0aaf3b344a6f67eb20f5400f, type: 3}
+  - name: Gates
+    prop: {fileID: -4206841693097243412, guid: 6e1f4d19950ac6149b777713c5229213, type: 3}
+  - name: Hole
+    prop: {fileID: 350730727911568525, guid: 6fdbb812ebb686942b56f75f6cc462ee, type: 3}
+  - name: Wall
+    prop: {fileID: 6624328209990092123, guid: 9c46c6a3b343a484596e6823fd1a352b, type: 3}
+  - name: WallAngle
+    prop: {fileID: -4433893410351319919, guid: 68f9bf35171b4a846bfcc34b0f2400c0, type: 3}
+  - name: WallPlug
+    prop: {fileID: 4351309975049254982, guid: 303fd8eb69862df4f97f8e1970ec8b05, type: 3}
+  - name: Brush
+    prop: {fileID: -225393527542782962, guid: e5708b21c1d349349ae7b6210442156e, type: 3}
+  - name: CatTray
+    prop: {fileID: -7744599524558522512, guid: e620df57ff43cfc4cb613e1b30b1d566, type: 3}
+  - name: Toilet1
+    prop: {fileID: -8588642171218930574, guid: f53e07b5b4bd07946bbe2a5df7a194fe, type: 3}
+  - name: Toilet2
+    prop: {fileID: -1413628472597129758, guid: 418b50f67bc58b4449a9a47229cbc40c, type: 3}
+  - name: ToiletPaper1
+    prop: {fileID: -1424358280203914088, guid: c54185e9ac549144fbcbb374e4cc0196, type: 3}
+  - name: ToiletPaper2
+    prop: {fileID: -7756716403384026835, guid: c3e475b8650d5a3458ff0f4fe8efb515, type: 3}
   wall: {fileID: 2714237004287445367, guid: 9c46c6a3b343a484596e6823fd1a352b, type: 3}
   corner: {fileID: 7821304623288775041, guid: 68f9bf35171b4a846bfcc34b0f2400c0, type: 3}
   roomName: {fileID: 117110294}

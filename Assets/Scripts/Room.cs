@@ -11,7 +11,11 @@ public class Room : MonoBehaviour
     private const float WallWidth = 5f;
     private const float HalfWallHeight = .2f;
 
+
+    public List<Prop> values;
+    
     public List<GameObject> editUI;
+    public List<PropKeyValue> prefabs;
     public GameObject wall;
     public GameObject corner;
     public TextMeshProUGUI roomName;
@@ -37,7 +41,7 @@ public class Room : MonoBehaviour
         width = room.width;
         height = room.height;
 
-        var floorObject = Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Floors/" + room.tileId + ".prefab"), new Vector3(0, 0, 105), Quaternion.identity);
+        var floorObject = Instantiate(prefabs.Find(kv => kv.name == room.tileId).prop, new Vector3(0, 0, 105), Quaternion.identity);
         floorObject.GetComponent<Prop>().enabled = false;
         var spriteRenderer = floorObject.GetComponent<SpriteRenderer>();
         spriteRenderer.size = new Vector2(width, height);
@@ -52,9 +56,9 @@ public class Room : MonoBehaviour
         foreach (var prop in room.props)
         {
             if (prop.propId.Equals(Guid.Empty)) continue;
-            var guid = AssetDatabase.FindAssets(prop.prefabId.Replace("(Clone)", ""), new[] {"Assets/Prefabs"}).FirstOrDefault();
-            if (guid is null) continue;
-            var propObject = Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(guid)), new Vector3(prop.posX, prop.posY, 100), quaternion.Euler(0, 0, prop.rotation));
+            var propPrefab = prefabs.Find(kv => kv.name == prop.propId.ToString()).prop;
+            if (propPrefab is null) continue;
+            var propObject = Instantiate(propPrefab, new Vector3(prop.posX, prop.posY, 100), quaternion.Euler(0, 0, prop.rotation));
             propObject.transform.localScale = new Vector3(prop.scaleX, prop.scaleY, 1);
             propObject.GetComponent<SpriteRenderer>().sortingOrder = prop.sortingLayer;
         }
@@ -100,5 +104,16 @@ public class Room : MonoBehaviour
         corner3.GetComponent<Prop>().enabled = false;
         var corner4 = Instantiate(corner, Vector3.zero + new Vector3(-(roomWidth / 2) + 1 - 0.41f, -(roomHeight / 2) + 1 - 0.41f, 100), Quaternion.Euler(0, 0, 180));
         corner4.GetComponent<Prop>().enabled = false;
+    }
+    
+    // So I don't have to type 200+ strings.
+    [ContextMenu("fill")]
+    public void Fill()
+    {
+        prefabs.Clear();
+        foreach (var val in values)
+        {
+            prefabs.Add(new PropKeyValue {name = val.name, prop = val});
+        }
     }
 }

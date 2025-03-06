@@ -30,7 +30,7 @@ public class ApiClientEnvironmentBuilder
     {
         var props = gameManager.Props;
 
-        await apiUtil.PerformApiCall($"https://localhost:7244/api/Props?roomId={roomId}", "DELETE", token: userSingleton.AccessToken);
+        await apiUtil.PerformApiCall($"https://avansict2226538.azurewebsites.net/api/Props?roomId={roomId}", "DELETE", token: userSingleton.AccessToken);
         
         foreach (var prop in props)
         {
@@ -45,10 +45,7 @@ public class ApiClientEnvironmentBuilder
                 sortingLayer = prop.GetComponent<SpriteRenderer>().sortingOrder,
                 roomId = RoomSingleton.Instance.Room.roomId
             };
-            
-            // todo
-            // "https://avansict2226538.azurewebsites.net/api/Rooms"
-            await apiUtil.PerformApiCall($"https://localhost:7244/api/Props", "Post", JsonConvert.SerializeObject(postPropsRequestDto), token: userSingleton.AccessToken);
+            await apiUtil.PerformApiCall($"https://avansict2226538.azurewebsites.net/api/Props", "Post", JsonConvert.SerializeObject(postPropsRequestDto), token: userSingleton.AccessToken);
         }
         statusText.text = "Saved!";
     }

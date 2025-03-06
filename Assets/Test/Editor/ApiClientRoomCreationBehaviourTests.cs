@@ -22,9 +22,9 @@ namespace Test.Editor
             IUserSingleton userSingleton = Substitute.For<IUserSingleton>();
             userSingleton.AccessToken.Returns("TestToken");
             IApiUtil apiUtil = Substitute.For<IApiUtil>();
-            apiUtil.PerformApiCall("https://localhost:7244/api/Rooms", "Post",
+            apiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/api/Rooms", "Post",
                 "{\"name\":\"name\",\"width\":20,\"height\":20,\"tileId\":\"Parquet1\"}", "TestToken").Returns(Task.FromResult(""));
-            apiUtil.PerformApiCall("https://localhost:7244/api/Rooms", "Get", token: "TestToken").Returns(Task.FromResult("[{\"roomId\":\"00000000-0000-0000-0000-000000000000\",\"name\":\"123456789123456789123456789\",\"width\":20,\"height\":20,\"tileId\":\"Parquet1\",\"isOwner\":true,\"props\":[]}]"));
+            apiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/api/Rooms", "Get", token: "TestToken").Returns(Task.FromResult("[{\"roomId\":\"00000000-0000-0000-0000-000000000000\",\"name\":\"123456789123456789123456789\",\"width\":20,\"height\":20,\"tileId\":\"Parquet1\",\"isOwner\":true,\"props\":[]}]"));
             
             // Act
             await apiClientRoomCreation.CreateRoom(apiUtil, statusMessage, roomNameInputField, roomHeightInputField,

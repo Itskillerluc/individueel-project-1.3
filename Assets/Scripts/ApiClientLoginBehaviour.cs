@@ -65,7 +65,7 @@ public class ApiClientLogin
         // var response = await ApiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/account/register",
         //     "Post", JsonUtility.ToJson(dto));
         
-        var response = await apiUtil.PerformApiCall("https://localhost:7244/account/register",
+        var response = await apiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/account/register",
             "Post", JsonConvert.SerializeObject(dto));
 
         if (response == "HTTP/1.1 400 Bad Request")
@@ -98,7 +98,7 @@ public class ApiClientLogin
         // var response = await ApiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/account/login", "Post",
         //     JsonUtility.ToJson(dto));
         
-        var response = await apiUtil.PerformApiCall("https://localhost:7244/account/login", "Post",
+        var response = await apiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/account/login", "Post",
             JsonConvert.SerializeObject(dto));
 
         if (response == "HTTP/1.1 401 Unauthorized")

@@ -122,8 +122,7 @@ public class ApiClientRoomCreation
             tileId = tileName
         };
         
-        await apiUtil.PerformApiCall("https://localhost:7244/api/Rooms", "Post", JsonConvert.SerializeObject(room), userSingleton.AccessToken);
-        //var response = await ApiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/api/Rooms", "Post", JsonUtility.ToJson(room), ApiTokenSingleton.Instance.Token);
+        await apiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/api/Rooms", "Post", JsonConvert.SerializeObject(room), userSingleton.AccessToken);
 
         statusMessage.text = "Room created!";
 
@@ -132,8 +131,7 @@ public class ApiClientRoomCreation
     
     private async Task<GetRoomsResponseDto[]> GetRoomsList(IApiUtil apiUtil, IUserSingleton userSingleton)
     {
-        //var response = await ApiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/api/Rooms", "Get", token: ApiTokenSingleton.Instance.Token);
-        var response = await apiUtil.PerformApiCall("https://localhost:7244/api/Rooms", "Get", token: userSingleton.AccessToken);
+        var response = await apiUtil.PerformApiCall("https://avansict2226538.azurewebsites.net/api/Rooms", "Get", token: userSingleton.AccessToken);
         var room = JsonConvert.DeserializeObject<GetRoomsResponseDto[]>(response);
         return room;
     } 
