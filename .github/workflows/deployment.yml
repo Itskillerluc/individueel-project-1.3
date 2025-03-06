@@ -13,13 +13,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  debug:
-    runs-on: ubuntu-latest
-    steps:
-      - run: tree .
-      - uses: actions/checkout@v4
-      - run: tree .
-
   test:
     permissions: write-all
     runs-on: ubuntu-latest
@@ -27,6 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: game-ci/unity-test-runner@v4
         with:
+          unityVersion: "6000.0.40f1"
           githubToken: ${{ secrets.GITHUB_TOKEN }}
 
   deploy-api:
