@@ -14,9 +14,11 @@ on:
 
 jobs:
   test:
-    - uses: game-ci/unity-test-runner@v4
-      with:
-        githubToken: ${{ secrets.PAT }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: game-ci/unity-test-runner@v4
+        with:
+          githubToken: ${{ secrets.PAT }}
 
   deploy-api:
     runs-on: ubuntu-latest
