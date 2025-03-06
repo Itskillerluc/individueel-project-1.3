@@ -1,4 +1,4 @@
-name: Get Unity license activation file 🔐
+  name: Get Unity license activation file 🔐
 
 on: workflow_dispatch
 
@@ -14,4 +14,4 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           projectPath: .
-          githubToken: ${{ secrets.TOKEN }}
+          githubToken: ${{ secrets.PAT }}
