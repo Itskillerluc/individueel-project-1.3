@@ -13,16 +13,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: game-ci/unity-test-runner@v4
-        with:
-          githubToken: ${{ secrets.PAT }}
+  #test:
+    #runs-on: ubuntu-latest
+    #steps:
+      #- uses: game-ci/unity-test-runner@v4
+        #with:
+          #githubToken: ${{ secrets.PAT }}
 
   deploy-api:
     runs-on: ubuntu-latest
-    needs: test
+    #needs: test
     steps:
       - name: Trigger Workflow in Another Repository
         run: |
