@@ -13,12 +13,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  #test:
-    #runs-on: ubuntu-latest
-    #steps:
-      #- uses: game-ci/unity-test-runner@v4
-        #with:
-          #githubToken: ${{ secrets.PAT }}
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: game-ci/unity-test-runner@v4
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
 
   deploy-api:
     runs-on: ubuntu-latest
