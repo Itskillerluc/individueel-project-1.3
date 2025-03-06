@@ -3,6 +3,11 @@ name: Get Unity license activation file 🔐
 on: workflow_dispatch
 
 jobs:
+  debug:
+    name: debug
+    runs-on: ubuntu-latest
+    steps:
+      - run: cat ProjectSettings/ProjectVersion.txt
   requestManualActivationFile:
     name: Request manual activation file 🔑
     runs-on: ubuntu-latest
