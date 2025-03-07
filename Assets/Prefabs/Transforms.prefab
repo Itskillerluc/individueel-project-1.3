@@ -167,7 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectedObject: {fileID: 0}
   Axis: 1
-  Sensitivity: 1
+  Sensitivity: 0.2
 --- !u!60 &4571068262875306259
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectedObject: {fileID: 0}
   Axis: 0
-  Sensitivity: 1
+  Sensitivity: 0.2
 --- !u!60 &555789809741427576
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -652,7 +652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectedObject: {fileID: 0}
   Axis: 2
-  Sensitivity: 1
+  Sensitivity: 0.2
 --- !u!60 &7441316509865771731
 PolygonCollider2D:
   m_ObjectHideFlags: 0

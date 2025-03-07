@@ -22,12 +22,12 @@ namespace Transform
                 var mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
                 if (Axis == Axis.Vertical)
                 {
-                    var scale = Mathf.Max(0.1f, EffectedObject.localScale.y * (1 - (mousePosition.y - _original.y) * 0.01f) * Sensitivity);
+                    var scale = Mathf.Max(0.1f, EffectedObject.localScale.y * (1 - (mousePosition.y - _original.y) * 0.01f * Sensitivity));
                     EffectedObject.localScale = new Vector3(EffectedObject.localScale.x, scale, 1);
                 }
                 else if (Axis == Axis.Horizontal)
                 {
-                    var scale = Mathf.Max(0.1f, EffectedObject.localScale.x * (1 - (mousePosition.x - _original.x) * 0.01f) * Sensitivity);
+                    var scale = Mathf.Max(0.1f, EffectedObject.localScale.x * (1 - (mousePosition.x - _original.x) * 0.01f * Sensitivity));
                     EffectedObject.localScale = new Vector3(scale, EffectedObject.localScale.y, 1);
                 }
                 else if (Axis == Axis.Both)
@@ -41,8 +41,8 @@ namespace Transform
                     var col3 = _original.x * i;
                     var col4 = _original.y * j;
                     var rotatedOriginal = col3 + col4;
-                    var scaleX = Mathf.Max(0.1f, EffectedObject.localScale.x * (1 - (rotatedMouse.x - rotatedOriginal.x) * 0.01f) * Sensitivity);
-                    var scaleY = Mathf.Max(0.1f, EffectedObject.localScale.y * (1 - (rotatedMouse.x - rotatedOriginal.x) * 0.01f) * Sensitivity);
+                    var scaleX = Mathf.Max(0.1f, EffectedObject.localScale.x * (1 - (rotatedMouse.x - rotatedOriginal.x) * 0.01f * Sensitivity));
+                    var scaleY = Mathf.Max(0.1f, EffectedObject.localScale.y * (1 - (rotatedMouse.x - rotatedOriginal.x) * 0.01f * Sensitivity));
 
                     EffectedObject.localScale = new Vector3(scaleX, scaleY, 1);
                 }
