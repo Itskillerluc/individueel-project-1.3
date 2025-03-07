@@ -56,7 +56,7 @@ public class Room : MonoBehaviour
         foreach (var prop in room.props)
         {
             if (prop.propId.Equals(Guid.Empty)) continue;
-            var propPrefab = prefabs.Find(kv => kv.name == prop.propId.ToString()).prop;
+            var propPrefab = prefabs.Find(kv => kv.name == prop.prefabId).prop;
             if (propPrefab is null) continue;
             var propObject = Instantiate(propPrefab, new Vector3(prop.posX, prop.posY, 100), quaternion.Euler(0, 0, prop.rotation));
             propObject.transform.localScale = new Vector3(prop.scaleX, prop.scaleY, 1);
