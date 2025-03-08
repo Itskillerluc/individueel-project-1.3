@@ -58,7 +58,7 @@ public class Room : MonoBehaviour
             if (prop.propId.Equals(Guid.Empty)) continue;
             var propPrefab = prefabs.Find(kv => kv.name == prop.prefabId).prop;
             if (propPrefab is null) continue;
-            var propObject = Instantiate(propPrefab, new Vector3(prop.posX, prop.posY, 100), quaternion.Euler(0, 0, prop.rotation));
+            var propObject = Instantiate(propPrefab, new Vector3(prop.posX, prop.posY, 100), quaternion.Euler(0, 0, Mathf.Deg2Rad * prop.rotation));
             propObject.transform.localScale = new Vector3(prop.scaleX, prop.scaleY, 1);
             propObject.GetComponent<SpriteRenderer>().sortingOrder = prop.sortingLayer;
         }
